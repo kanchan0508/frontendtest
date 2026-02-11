@@ -1,0 +1,105 @@
+@import "tailwindcss";
+
+@theme {
+  --font-arima: var(--font-arima);
+  --font-mulish: var(--font-mulish);
+  --font-overpass: var(--font-overpass);
+  --font-lato: var(--font-lato);
+  --font-inter: var(--font-inter);
+  --font-poppins: var(--font-poppins);
+
+  /* Color Variables */
+  --color-bg-main: var(--bg-main);
+  --color-primary-purple: var(--color-primary-purple);
+  --color-secondary-purple: var(--color-secondary-purple);
+  --color-accent-orange: var(--color-accent-orange);
+  --color-text-dark: var(--color-text-dark);
+  --color-text-gray: var(--color-text-gray);
+  --color-heading-blue: var(--color-heading-blue);
+  --color-light-purple-bg: var(--color-light-purple-bg);
+  --color-pagination-gray: var(--color-pagination-gray);
+  --color-teal: var(--color-teal);
+  --color-accent-green: var(--color-accent-green);
+  --color-accent-blue: var(--color-accent-blue);
+  --color-dark-teal: var(--color-dark-teal);
+  --color-dark-green: var(--color-dark-green);
+  --color-dark-orange: var(--color-dark-orange);
+  --color-stats-border: var(--color-stats-border);
+  --color-stats-bg: var(--color-stats-bg);
+  --color-purple-banner: var(--color-purple-banner);
+  --color-purple-card: var(--color-purple-card);
+  --color-footer-bg: var(--color-footer-bg);
+  --color-chip-purple: var(--color-chip-purple);
+  --color-card-blue: var(--color-card-blue);
+  --color-card-yellow: var(--color-card-yellow);
+  --color-card-peach: var(--color-card-peach);
+}
+
+:root {
+  --default-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Ubuntu, "Helvetica Neue", Helvetica, Arial, "PingFang SC",
+    "Hiragino Sans GB", "Microsoft Yahei UI", "Microsoft Yahei",
+    "Source Han Sans CN", sans-serif;
+
+  /* Colors */
+  --bg-main: #f7f9fc;
+  --bg-white: #ffffff;
+  --color-primary-purple: #b95af9;
+  --color-secondary-purple: #ac46ff;
+  --color-accent-orange: #f2a848;
+  --color-text-dark: #1a1a1a;
+  --color-text-gray: #4a4a4a;
+  --color-border-light: #e2e4ed;
+  --color-heading-blue: #6060b4;
+  --color-teal: #4e8fa7;
+  --color-light-purple-bg: #f0e6f3;
+  --color-chip-purple: #f0daff;
+  --color-card-blue: #d4deff;
+  --color-card-yellow: #fcfcd4;
+  --color-card-peach: #fde6db;
+  --color-pagination-gray: #e4e8f0;
+
+  /* Accents */
+  --color-accent-green: #84c760;
+  --color-accent-blue: #65b6d0;
+  --color-dark-teal: #025b65;
+  --color-dark-green: #5d8547;
+  --color-dark-orange: #c67002;
+  --color-stats-border: #d7d7d7;
+  --color-stats-bg: rgba(225, 235, 240, 0.2);
+  --color-purple-banner: #e9d1fa;
+  --color-purple-card: #eddffc;
+  --color-footer-bg: #8e5593;
+}
+
+body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+.main-container {
+  overflow: hidden;
+}
+
+.main-container,
+.main-container * {
+  box-sizing: border-box;
+}
+
+input,
+select,
+textarea,
+button {
+  outline: 0;
+}
+
+@layer utilities {
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
