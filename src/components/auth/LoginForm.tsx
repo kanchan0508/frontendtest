@@ -68,8 +68,8 @@ export default function LoginForm({ mode }: LoginFormProps) {
                 className={`flex h-[53px] pt-0 pr-[24px] pb-0 pl-[32px] gap-[12px] justify-center items-center self-stretch shrink-0 flex-nowrap rounded-[12px] border-solid border border-[#b95af9] relative overflow-hidden cursor-pointer transition-colors z-[38] ${!agreed ? 'opacity-50 cursor-not-allowed grayscale' : 'hover:bg-[#b95af9]/5'}`}
                 onClick={() => {
                   if (agreed) {
-                    // Handle Google Auth
-                    console.log("Google Auth triggered");
+                    // Logic to simulate login success
+                    router.push("/dashboard");
                   }
                 }}
               >
