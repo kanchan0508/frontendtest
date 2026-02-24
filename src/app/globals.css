@@ -1,6 +1,9 @@
 @import "tailwindcss";
 
 @theme {
+  /* ========================================
+     FONT FAMILIES
+     ======================================== */
   --font-arima: var(--font-arima);
   --font-mulish: var(--font-mulish);
   --font-overpass: var(--font-overpass);
@@ -8,31 +11,87 @@
   --font-inter: var(--font-inter);
   --font-poppins: var(--font-poppins);
 
-  /* Color Variables */
-  --color-bg-main: var(--bg-main);
-  --color-primary-purple: var(--color-primary-purple);
-  --color-secondary-purple: var(--color-secondary-purple);
-  --color-accent-orange: var(--color-accent-orange);
-  --color-text-dark: var(--color-text-dark);
-  --color-text-gray: var(--color-text-gray);
-  --color-heading-blue: var(--color-heading-blue);
-  --color-light-purple-bg: var(--color-light-purple-bg);
-  --color-pagination-gray: var(--color-pagination-gray);
-  --color-teal: var(--color-teal);
-  --color-accent-green: var(--color-accent-green);
-  --color-accent-blue: var(--color-accent-blue);
-  --color-dark-teal: var(--color-dark-teal);
-  --color-dark-green: var(--color-dark-green);
-  --color-dark-orange: var(--color-dark-orange);
-  --color-stats-border: var(--color-stats-border);
-  --color-stats-bg: var(--color-stats-bg);
-  --color-purple-banner: var(--color-purple-banner);
-  --color-purple-card: var(--color-purple-card);
-  --color-footer-bg: var(--color-footer-bg);
-  --color-chip-purple: var(--color-chip-purple);
-  --color-card-blue: var(--color-card-blue);
-  --color-card-yellow: var(--color-card-yellow);
-  --color-card-peach: var(--color-card-peach);
+  /* ========================================
+     BRAND COLORS
+     ======================================== */
+  /* Primary */
+  --color-primary: #b95af9;
+  --color-primary-purple: #b95af9;
+  
+  /* Secondary */
+  --color-secondary: #4e8fa7;
+  --color-secondary-purple: #ac46ff;
+  
+  /* Accent */
+  --color-accent: #f2a848;
+  --color-accent-orange: #f2a848;
+  
+  /* Background Colors */
+  --color-bg-main: #f7f9fc;
+  --color-bg-white: #ffffff;
+  --color-bg-purple-light: #e9d1fa;
+  --color-bg-purple-soft: #f0e6f3;
+  --color-bg-purple-pale: #fbf5ff;
+  
+  /* Text Colors */
+  --color-text-dark: #1a1a1a;
+  --color-text-gray: #4a4a4a;
+  --color-text-light: #6b7280;
+  
+  /* Error Colors */
+  --color-error: #dc2626;
+  --color-error-dark: #b91c1c;
+  --color-error-light: #ef4444;
+  
+  /* Success Colors */
+  --color-success: #22c55e;
+  --color-success-dark: #16a34a;
+  
+  /* Other Brand Colors */
+  --color-heading-blue: #6060b4;
+  --color-teal: #4e8fa7;
+  --color-dark-teal: #025b65;
+  --color-accent-green: #84c760;
+  --color-dark-green: #5d8547;
+  --color-accent-blue: #65b6d0;
+  --color-dark-orange: #c67002;
+  --color-olive: #8b9a6b;
+  --color-sky: #87ceeb;
+  --color-cyan: #00bcd4;
+  --color-amber: #f59e0b;
+  
+  /* UI Colors */
+  --color-border-light: #e2e4ed;
+  --color-light-purple-bg: #f0e6f3;
+  --color-chip-purple: #f0daff;
+  --color-card-blue: #d4deff;
+  --color-card-yellow: #fcfcd4;
+  --color-card-peach: #fde6db;
+  --color-pagination-gray: #e4e8f0;
+  --color-stats-border: #d7d7d7;
+  --color-stats-bg: rgba(225, 235, 240, 0.2);
+  --color-purple-banner: #e9d1fa;
+  --color-purple-card: #eddffc;
+  --color-footer-bg: #8e5593;
+
+  /* Gradient Colors */
+  --color-gradient-purple-start: #b95af9;
+  --color-gradient-purple-end: #7c3aed;
+  --color-gradient-blue-start: #4e8fa7;
+  --color-gradient-blue-end: #6366f1;
+  --color-gradient-teal-start: #14b8a6;
+  --color-gradient-teal-end: #0d9488;
+
+  /* ========================================
+     SPACING SCALE
+     ======================================== */
+  --spacing-1: 4px;
+  --spacing-2: 8px;
+  --spacing-4: 16px;
+  --spacing-6: 24px;
+  --spacing-8: 32px;
+  --spacing-10: 40px;
+  --spacing-12: 48px;
 }
 
 :root {
@@ -41,28 +100,56 @@
     "Hiragino Sans GB", "Microsoft Yahei UI", "Microsoft Yahei",
     "Source Han Sans CN", sans-serif;
 
-  /* Colors */
+  /* ========================================
+     BRAND COLORS (CSS Variables)
+     ======================================== */
+  
+  /* Primary */
+  --color-primary: #b95af9;
+  --color-primary-purple: #b95af9;
+  
+  /* Secondary */
+  --color-secondary: #4e8fa7;
+  --color-secondary-purple: #ac46ff;
+  
+  /* Accent */
+  --color-accent: #f2a848;
+  --color-accent-orange: #f2a848;
+  
+  /* Background Colors */
   --bg-main: #f7f9fc;
   --bg-white: #ffffff;
-  --color-primary-purple: #b95af9;
-  --color-secondary-purple: #ac46ff;
-  --color-accent-orange: #f2a848;
+  --bg-purple-light: #e9d1fa;
+  --bg-purple-soft: #f0e6f3;
+  --bg-purple-pale: #fbf5ff;
+  
+  /* Text Colors */
   --color-text-dark: #1a1a1a;
   --color-text-gray: #4a4a4a;
+  --color-text-light: #6b7280;
+  
+  /* Error Colors */
+  --color-error: #dc2626;
+  --color-error-dark: #b91c1c;
+  --color-error-light: #ef4444;
+  
+  /* Success Colors */
+  --color-success: #22c55e;
+  --color-success-dark: #16a34a;
+  
+  /* Other Colors */
   --color-border-light: #e2e4ed;
   --color-heading-blue: #6060b4;
   --color-teal: #4e8fa7;
+  --color-dark-teal: #025b65;
   --color-light-purple-bg: #f0e6f3;
   --color-chip-purple: #f0daff;
   --color-card-blue: #d4deff;
   --color-card-yellow: #fcfcd4;
   --color-card-peach: #fde6db;
   --color-pagination-gray: #e4e8f0;
-
-  /* Accents */
   --color-accent-green: #84c760;
   --color-accent-blue: #65b6d0;
-  --color-dark-teal: #025b65;
   --color-dark-green: #5d8547;
   --color-dark-orange: #c67002;
   --color-stats-border: #d7d7d7;
@@ -70,6 +157,21 @@
   --color-purple-banner: #e9d1fa;
   --color-purple-card: #eddffc;
   --color-footer-bg: #8e5593;
+  --color-olive: #8b9a6b;
+  --color-sky: #87ceeb;
+  --color-cyan: #00bcd4;
+  --color-amber: #f59e0b;
+
+  /* ========================================
+     SPACING SCALE
+     ======================================== */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
 }
 
 body {
@@ -92,6 +194,328 @@ textarea,
 button {
   outline: 0;
 }
+
+/* ========================================
+   TYPOGRAPHY SYSTEM
+   ======================================== */
+
+/* ----- HEADINGS ----- */
+
+/* H1 Variants - 64px */
+.heading-h1-medium {
+  font-family: var(--font-arima);
+  font-size: 64px;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.heading-h1-bold {
+  font-family: var(--font-arima);
+  font-size: 64px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.heading-h1-light {
+  font-family: var(--font-arima);
+  font-size: 64px;
+  font-weight: 300;
+  line-height: 1.2;
+}
+
+/* H2 Variants - 48px */
+.heading-h2-medium {
+  font-family: var(--font-arima);
+  font-size: 48px;
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+.heading-h2-bold {
+  font-family: var(--font-arima);
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.heading-h2-black {
+  font-family: var(--font-arima);
+  font-size: 48px;
+  font-weight: 900;
+  line-height: 1.3;
+}
+
+.heading-h2-extrabold {
+  font-family: var(--font-arima);
+  font-size: 48px;
+  font-weight: 800;
+  line-height: 1.3;
+}
+
+/* H3 Variants - 32px */
+.heading-h3-medium {
+  font-family: var(--font-arima);
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.heading-h3-bold {
+  font-family: var(--font-arima);
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+/* H4 Variants - 36px */
+.heading-h4-medium {
+  font-family: var(--font-arima);
+  font-size: 36px;
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+.heading-h4-bold {
+  font-family: var(--font-arima);
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+/* H5 Variants - 24px */
+.heading-h5-bold {
+  font-family: var(--font-arima);
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.heading-h5-extrabold {
+  font-family: var(--font-arima);
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 1.4;
+}
+
+/* ----- SUBHEADINGS ----- */
+
+/* Subheading h1 - 28px */
+.subheading-h1 {
+  font-family: var(--font-mulish);
+  font-size: 28px;
+  font-weight: 300;
+  line-height: 1.4;
+}
+
+/* Subheading h2 - 24px Light */
+.subheading-h2 {
+  font-family: var(--font-mulish);
+  font-size: 24px;
+  font-weight: 300;
+  line-height: 1.4;
+}
+
+/* Subheading Medium - 24px Regular */
+.subheading-medium {
+  font-family: var(--font-mulish);
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+/* Subheading Small - 20px Semibold */
+.subheading-small {
+  font-family: var(--font-mulish);
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+/* Subheading Medium Alt - 16px Medium */
+.subheading-md {
+  font-family: var(--font-mulish);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+/* Subheading XS - 12px */
+.subheading-xs {
+  font-family: var(--font-mulish);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+/* ----- BUTTONS ----- */
+
+/* Button Large - 16px Bold */
+.btn-text-lg {
+  font-family: var(--font-arima);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+/* Button Small - 14px Medium */
+.btn-text-sm {
+  font-family: var(--font-arima);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1;
+}
+
+/* Button Large Extra Bold - 16.5px */
+.btn-text-lg-bold {
+  font-family: var(--font-arima);
+  font-size: 16.5px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+/* ----- BODY TEXT ----- */
+
+/* Body b1 - 20px Light */
+.body-b1 {
+  font-family: var(--font-mulish);
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+/* Body b2 - 16px Regular */
+.body-b2 {
+  font-family: var(--font-mulish);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+/* ----- CHIPS ----- */
+
+/* Chip Large - 18px Regular */
+.chip-text {
+  font-family: var(--font-mulish);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+/* ----- NAV TEXT ----- */
+.nav-text {
+  font-family: var(--font-arima);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+/* ----- LABEL TEXT ----- */
+.label-text {
+  font-family: var(--font-mulish);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+/* ----- CAPTION TEXT ----- */
+.caption-text {
+  font-family: var(--font-mulish);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+/* ========================================
+   SPACING UTILITY CLASSES
+   ======================================== */
+
+/* Gap utilities */
+.gap-space-1 { gap: var(--space-1); }
+.gap-space-2 { gap: var(--space-2); }
+.gap-space-4 { gap: var(--space-4); }
+.gap-space-6 { gap: var(--space-6); }
+.gap-space-8 { gap: var(--space-8); }
+.gap-space-10 { gap: var(--space-10); }
+.gap-space-12 { gap: var(--space-12); }
+
+/* Padding utilities */
+.p-space-1 { padding: var(--space-1); }
+.p-space-2 { padding: var(--space-2); }
+.p-space-4 { padding: var(--space-4); }
+.p-space-6 { padding: var(--space-6); }
+.p-space-8 { padding: var(--space-8); }
+.p-space-10 { padding: var(--space-10); }
+.p-space-12 { padding: var(--space-12); }
+
+/* Margin utilities */
+.m-space-1 { margin: var(--space-1); }
+.m-space-2 { margin: var(--space-2); }
+.m-space-4 { margin: var(--space-4); }
+.m-space-6 { margin: var(--space-6); }
+.m-space-8 { margin: var(--space-8); }
+.m-space-10 { margin: var(--space-10); }
+.m-space-12 { margin: var(--space-12); }
+
+/* ========================================
+   GRADIENT UTILITIES
+   ======================================== */
+
+.gradient-purple {
+  background: linear-gradient(135deg, #b95af9 0%, #7c3aed 100%);
+}
+
+.gradient-blue {
+  background: linear-gradient(135deg, #4e8fa7 0%, #6366f1 100%);
+}
+
+.gradient-teal {
+  background: linear-gradient(135deg, #14b8a6 0%, #0d9488 100%);
+}
+
+.gradient-purple-soft {
+  background: linear-gradient(135deg, #e9d1fa 0%, #f0e6f3 100%);
+}
+
+.gradient-text-purple {
+  background: var(--Text-Gradient, linear-gradient(135deg, #B95AF9 0%, #5299DB 100%));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ========================================
+   COLOR UTILITY CLASSES
+   ======================================== */
+
+/* Text Colors */
+.text-primary { color: var(--color-primary); }
+.text-secondary { color: var(--color-secondary); }
+.text-accent { color: var(--color-accent); }
+.text-dark { color: var(--color-text-dark); }
+.text-gray { color: var(--color-text-gray); }
+.text-error { color: var(--color-error); }
+.text-success { color: var(--color-success); }
+.text-heading-blue { color: var(--color-heading-blue); }
+.text-teal { color: var(--color-teal); }
+.text-dark-teal { color: var(--color-dark-teal); }
+
+/* Background Colors */
+.bg-primary { background-color: var(--color-primary); }
+.bg-secondary { background-color: var(--color-secondary); }
+.bg-accent { background-color: var(--color-accent); }
+.bg-main { background-color: var(--bg-main); }
+.bg-purple-light { background-color: var(--bg-purple-light); }
+.bg-purple-soft { background-color: var(--bg-purple-soft); }
+.bg-purple-pale { background-color: var(--bg-purple-pale); }
+.bg-error { background-color: var(--color-error); }
+.bg-success { background-color: var(--color-success); }
+
+/* Border Colors */
+.border-primary { border-color: var(--color-primary); }
+.border-secondary { border-color: var(--color-secondary); }
+.border-light { border-color: var(--color-border-light); }
+.border-error { border-color: var(--color-error); }
+.border-success { border-color: var(--color-success); }
 
 @layer utilities {
   .scrollbar-hide::-webkit-scrollbar {

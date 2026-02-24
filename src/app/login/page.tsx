@@ -1,19 +1,11 @@
 "use client";
 import React from "react";
-import TopBar from "@/components/layout/TopBar";
-import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/landing-page/Footer";
 import LoginForm from "@/components/auth/LoginForm";
 
 export default function Login() {
   return (
     <div className="main-container w-full max-w-[1440px] bg-[#fbfcfe] relative overflow-x-hidden mx-auto my-0">
-      {/* Header Section */}
-      <div className="flex w-full pt-0 pr-0 pb-[10px] pl-0 flex-col gap-[10px] justify-end items-center flex-nowrap bg-white relative z-[100] mt-0 mr-0 mb-0 ml-0 border-b border-[#F2F2F2]">
-        <TopBar />
-        <Navbar />
-      </div>
-
       <div className="min-h-[800px] flex items-center justify-center relative">
         {/* Decorative Background Elements from User code */}
         <div className="w-[101.253px] h-[101.253px] bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-02-11/QQDwXbM6Jv.png)] bg-[length:100%_100%] bg-no-repeat absolute top-[50px] right-[15%] z-[10]" />

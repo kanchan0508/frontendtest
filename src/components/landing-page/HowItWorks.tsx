@@ -2,21 +2,23 @@ import React from "react";
 
 export default function HowItWorks() {
   return (
-    <div className="flex w-full max-w-[1440px] pt-[100px] pr-[160px] pb-[100px] pl-[160px] flex-col gap-[48px] items-center shrink-0 flex-nowrap relative z-[36]">
+    <div className="flex w-full max-w-[1440px] pt-[100px] pr-[160px] pb-[50px] pl-[160px] flex-col gap-[48px] items-center shrink-0 flex-nowrap relative z-[36]">
       <div className="flex flex-col gap-[20px] items-center self-stretch shrink-0 flex-nowrap relative z-[37]">
         <div className="w-full max-w-[1120px] mx-auto shrink-0 font-overpass text-[48px] font-bold leading-[60.768px] relative text-center whitespace-nowrap z-[38]">
-          <span className="font-arima text-[48px] font-medium leading-[78.384px] text-text-dark relative text-center">
+          <span className="heading-h2-medium leading-[78.384px] text-text-dark relative text-center">
             How AMPL{" "}
           </span>
-          <span className="font-arima text-[48px] font-black leading-[78.384px] relative text-center">
-            Works
+          <span className="relative inline-block">
+            <span className="heading-h2-black leading-[78.384px] gradient-text-purple relative text-center">
+              Works
+            </span>
+            <img src="/vector-4.svg" alt="" className="absolute -bottom-[6px] left-0 w-full pointer-events-none" />
           </span>
-          <span className="font-arima text-[48px] font-medium leading-[78.384px] text-text-dark relative text-center">
+          <span className="heading-h2-medium leading-[78.384px] text-text-dark relative text-center">
             ?
           </span>
         </div>
-        <div className="w-[146.165px] h-[17.676px] shrink-0 bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-02-11/CpRYzRLeCE.png)] bg-cover bg-no-repeat absolute top-[57px] left-[633.998px] z-[39]" />
-        <span className="flex w-full max-w-[1120px] mx-auto h-[54px] justify-center items-center self-stretch shrink-0 font-mulish text-[20px] font-normal leading-[27.4px] text-text-gray tracking-[0.2px] relative text-center z-[39]">
+        <span className="flex w-full max-w-[1120px] mx-auto h-[54px] justify-center items-center self-stretch shrink-0 body-b1 font-normal leading-[27.4px] text-text-gray tracking-[0.2px] relative text-center z-[39]">
           We help you address life's toughest questions and find the answers
           within yourself.
         </span>
@@ -32,12 +34,12 @@ export default function HowItWorks() {
         </div>
         <div className="flex flex-col gap-[12px] justify-center items-start grow shrink-0 basis-0 flex-nowrap relative z-[48]">
           <div className="flex flex-col gap-[44px] items-start self-stretch shrink-0 flex-nowrap relative z-[49]">
-            <span className="h-[52px] self-stretch shrink-0 basis-auto font-arima text-[32px] font-medium leading-[52px] text-heading-blue relative text-left whitespace-nowrap z-50">
+            <span className="h-[52px] self-stretch shrink-0 basis-auto heading-h3-medium leading-[52px] text-heading-blue relative text-left whitespace-nowrap z-50">
               Psychometric Assessment
             </span>
           </div>
           <div className="flex flex-col gap-[44px] items-start self-stretch shrink-0 flex-nowrap relative z-[51]">
-            <span className="flex w-[624px] h-[90px] justify-start items-start self-stretch shrink-0 font-mulish text-[24px] font-light leading-[30.12px] text-text-gray relative text-left z-[52]">
+            <span className="flex w-[624px] h-[90px] justify-start items-start self-stretch shrink-0 subheading-h2 leading-[30.12px] text-text-gray relative text-left z-[52]">
               Answer a few simple questions to gain clear, science-backed
               insights into your emotions, strengths, and personal patterns.
             </span>
@@ -47,12 +49,12 @@ export default function HowItWorks() {
       <div className="flex w-[1120px] pt-[41px] pr-0 pb-[41px] pl-0 gap-[84px] items-center shrink-0 flex-nowrap relative z-[53]">
         <div className="flex h-[140px] flex-col gap-[12px] justify-center items-start grow shrink-0 basis-0 flex-nowrap relative z-[54]">
           <div className="flex flex-col gap-[44px] items-end self-stretch shrink-0 flex-nowrap relative z-[55]">
-            <span className="h-[52px] self-stretch shrink-0 basis-auto font-arima text-[32px] font-medium leading-[52px] text-heading-blue relative text-left whitespace-nowrap z-[56]">
+            <span className="h-[52px] self-stretch shrink-0 basis-auto heading-h3-medium leading-[52px] text-heading-blue relative text-left whitespace-nowrap z-[56]">
               Guided Tools and Modules
             </span>
           </div>
           <div className="flex flex-col gap-[44px] items-start self-stretch shrink-0 flex-nowrap relative z-[57]">
-            <span className="flex w-[624px] h-[90px] justify-start items-start self-stretch shrink-0 font-mulish text-[24px] font-light leading-[30.12px] text-text-gray relative text-left z-[58]">
+            <span className="flex w-[624px] h-[90px] justify-start items-start self-stretch shrink-0 subheading-h2 leading-[30.12px] text-text-gray relative text-left z-[58]">
               Engage with short, guided exercises, reflections, and learning
               modules designed to build balance, clarity, and resilience.
             </span>
@@ -90,12 +92,12 @@ export default function HowItWorks() {
         </div>
         <div className="flex h-[140px] flex-col gap-[12px] justify-center items-start grow shrink-0 basis-0 flex-nowrap relative z-[77]">
           <div className="flex flex-col gap-[44px] items-end self-stretch shrink-0 flex-nowrap relative z-[78]">
-            <span className="h-[52px] self-stretch shrink-0 basis-auto font-arima text-[32px] font-medium leading-[52px] text-heading-blue relative text-left whitespace-nowrap z-[79]">
+            <span className="h-[52px] self-stretch shrink-0 basis-auto heading-h3-medium leading-[52px] text-heading-blue relative text-left whitespace-nowrap z-[79]">
               Coaching and Value Gifts
             </span>
           </div>
           <div className="flex flex-col gap-[44px] items-start self-stretch shrink-0 flex-nowrap relative z-[80]">
-            <span className="flex w-[624px] h-[90px] justify-start items-start self-stretch shrink-0 font-mulish text-[24px] font-light leading-[30.12px] text-text-gray relative text-left z-[81]">
+            <span className="flex w-[624px] h-[90px] justify-start items-start self-stretch shrink-0 subheading-h2 leading-[30.12px] text-text-gray relative text-left z-[81]">
               Connect with expert coaches for ongoing support and unlock
               value-driven rewards as you progress on your journey.
             </span>

@@ -14,9 +14,9 @@ export default function Hero() {
   }, [nextSlide]);
 
   return (
-    <div className="flex w-full max-w-[1336px] overflow-hidden relative flex-col items-center gap-[36px]">
+    <div className="flex w-full max-w-[1336px] overflow-hidden relative flex-col items-center gap-[36px] px-4 md:px-[20px] lg:px-[40px] mt-[30px] mx-auto">
       {/* Aspect Ratio Box to contain the absolute content faithfully */}
-      <div className="w-full aspect-[1336/824] relative rounded-[64px] overflow-hidden bg-[#f0e6f3] shadow-md">
+      <div className="w-full aspect-[1336/824] relative rounded-[32px] md:rounded-[64px] overflow-hidden bg-[#f0e6f3] shadow-md">
         
         {/* Horizontal Slide Strip */}
         <div 
@@ -30,20 +30,19 @@ export default function Hero() {
             <div className="w-[8.23%] h-[110px] bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-02-11/rwdceixGoq.png)] bg-cover bg-no-repeat absolute top-[125px] left-[92.81%] z-[23]" />
             <div className="flex w-[599px] h-[423px] flex-col gap-[48px] justify-center items-start absolute top-1/2 left-[123px] -translate-y-1/2 z-[4]">
               <div className="flex flex-col gap-[12px] items-start self-stretch relative z-[5]">
-                <div className="w-[118.587px] h-[17.543px] bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-02-11/sKaLEzE2Uy.png)] bg-cover absolute top-[210px] left-[227px] z-[6]" />
-                <h1 className="font-arima text-[48px] font-extrabold leading-[1.2] tracking-[0.48px] text-[#1a1a1a]">
-                  <span className="font-normal">Awaken your</span> Mind. <br />
-                  <span className="font-normal">Transform your</span> Life. <br />
-                  <span className="font-normal">Empower</span> Self.
+                <h1 className="heading-h2-extrabold leading-[1.2] tracking-[0.48px] text-[#1a1a1a]">
+                  <span className="font-normal">Awaken your</span> <span className="gradient-text-purple">Mind.</span> <br />
+                  <span className="font-normal">Transform your</span> <span className="gradient-text-purple">Life.</span> <br />
+                  <span className="font-normal">Empower</span> <span className="gradient-text-purple relative inline-block">Self.<img src="/vector-4.svg" alt="" className="absolute -bottom-[6px] left-0 w-full pointer-events-none" /></span>
                 </h1>
-                <p className="font-mulish text-[20px] font-light leading-[27.4px] text-[#4a4a4a] tracking-[0.2px] z-[8]">
+                <p className="body-b1 leading-[27.4px] text-[#4a4a4a] tracking-[0.2px] z-[8]">
                   A global coaching, wellness & growth ecosystem helping individuals rise with clarity, confidence, and commitment — in life, career, and relationships.
                 </p>
               </div>
               <div className="w-[31px] h-[17px] bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-02-11/pOq78AAys4.png)] bg-cover absolute top-[-0.5px] left-[393px] z-[9]" />
               <div className="flex w-[374px] gap-[20px] items-center z-10">
-                <button className="flex h-[48px] px-8 justify-center items-center grow rounded-xl border border-[#4e8fa7] text-[#4e8fa7] font-arima font-bold hover:bg-[#4e8fa7]/5 transition-all">Talk with Expert</button>
-                <button className="flex h-[48px] px-8 justify-center items-center grow rounded-xl bg-[#b95af9] text-white font-arima font-bold shadow-[0_2px_6px_0_#ffffff_inset] hover:bg-[#a64de0] transition-all">Explore</button>
+                <button className="flex h-[48px] px-8 justify-center items-center grow rounded-xl border border-[#4e8fa7] text-[#4e8fa7] btn-text-lg hover:bg-[#4e8fa7]/5 transition-all">Talk with Expert</button>
+                <button className="flex h-[48px] px-8 justify-center items-center grow rounded-xl bg-[#b95af9] text-white btn-text-lg shadow-[0_2px_6px_0_#ffffff_inset] hover:bg-[#a64de0] transition-all">Explore</button>
               </div>
             </div>
             <div className="w-[4.87%] h-[65px] bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-02-11/kmcjwPGFBn.png)] bg-cover absolute top-[238px] left-[56.21%] z-20" />
@@ -72,20 +71,20 @@ export default function Hero() {
             </div>
             <div className="flex w-[515px] h-[382px] flex-col gap-[48px] justify-center items-start absolute top-1/2 left-[117px] -translate-y-1/2 z-[47]">
               <div className="flex flex-col gap-[12px] items-start self-stretch z-[48]">
-                <h1 className="font-arima text-[48px] font-medium leading-[1.2] tracking-[0.48px] text-[#1a1a1a]">
-                  Who this is <span className="font-extrabold text-[#1a1a1a]">For?.</span>
+                <h1 className="heading-h2-medium leading-[1.2] tracking-[0.48px] text-[#1a1a1a]">
+                  <span className="font-extrabold gradient-text-purple">Who</span> this is <span className="font-extrabold text-[#1a1a1a]">For?.</span>
                 </h1>
-                <p className="font-mulish text-[20px] font-light leading-[27px] text-[#4a4a4a] tracking-[0.2px] z-50">
+                <p className="body-b1 leading-[27px] text-[#4a4a4a] tracking-[0.2px] z-50">
                   A global For Every Individual Who Wants More from Life
                 </p>
                 <div className="flex flex-col gap-[12px] opacity-80 z-[51]">
                   {["A student shaping your future", "A working professional seeking clarity or growth", "A leader navigating pressure and responsibility", "An individual healing, evolving, and rediscovering purpose"].map((t) => (
-                    <span key={t} className="font-mulish text-[16px] font-light leading-[1.4] text-[#4a4a4a]">• {t}</span>
+                    <span key={t} className="body-b2 font-light leading-[1.4] text-[#4a4a4a]">• {t}</span>
                   ))}
                 </div>
               </div>
               <div className="w-[32px] h-[17px] bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-02-11/Sf3KfLcqDE.png)] bg-cover absolute top-[-2px] left-[-20px] z-[56]" />
-              <p className="font-mulish text-[20px] font-light leading-[27px] text-[#4a4a4a] z-[57]">AKSHAY MINDS meets you exactly where you are — and helps you move forward.</p>
+              <p className="body-b1 leading-[27px] text-[#4a4a4a] z-[57]">AKSHAY MINDS meets you exactly where you are — and helps you move forward.</p>
             </div>
             <div className="w-[4.87%] h-[65px] bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-02-11/4rbA49PVcR.png)] bg-cover absolute top-[238px] left-[56.21%] z-[44]" />
             <div className="w-[8.23%] h-[110px] bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-02-11/HazRXMVVut.png)] bg-cover absolute top-[730px] left-[73.58%] z-[46]" />
@@ -107,14 +106,14 @@ export default function Hero() {
             </div>
             <div className="flex w-[599px] h-[323px] flex-col gap-[48px] items-start absolute top-[196px] left-[106px] z-[81]">
               <div className="flex flex-col gap-[12px] items-start self-stretch z-[82]">
-                <h1 className="font-arima text-[48px] font-medium leading-[1.2] tracking-[0.48px] text-[#1a1a1a]">
-                  Why <span className="font-extrabold text-white">AKSHAY MINDS?.</span>
+                <h1 className="heading-h2-medium leading-[1.2] tracking-[0.48px] text-[#1a1a1a]">
+                  Why <span className="font-extrabold gradient-text-purple">AKSHAY MINDS?.</span>
                 </h1>
                 {["Evidence-based mentoring, counselling, coaching", "NLP & hypnotherapy for deep mindset shifts", "Structured goal & career frameworks", "Holistic well-being and emotional resilience", "Digital convenience with human connection"].map((t) => (
-                  <span key={t} className="font-mulish text-[16px] font-light leading-[1.4] text-[#4a4a4a]">• {t}</span>
+                  <span key={t} className="body-b2 font-light leading-[1.4] text-[#4a4a4a]">• {t}</span>
                 ))}
               </div>
-              <p className="font-mulish text-[20px] font-light leading-[27px] text-[#4a4a4a] z-[89]">This is growth that is scientific, soulful, and sustainable.</p>
+              <p className="body-b1 leading-[27px] text-[#4a4a4a] z-[89]">This is growth that is scientific, soulful, and sustainable.</p>
             </div>
             <div className="w-[4.87%] h-[65px] bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-02-11/LH733Nv9xz.png)] bg-cover absolute top-[238px] left-[56.21%] z-[78]" />
             <div className="w-[8.23%] h-[110px] bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-02-11/cGoObBgz2r.png)] bg-cover absolute top-[730px] left-[73.58%] z-[80]" />
@@ -127,16 +126,16 @@ export default function Hero() {
             <div className="w-[8.23%] h-[110px] bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-02-11/jsrPF5Ur4j.png)] bg-cover absolute top-[125px] left-[92.81%] z-[112]" />
             <div className="flex w-[599px] h-[366px] flex-col gap-[48px] items-start absolute top-[196px] left-[106px] z-[114]">
               <div className="flex flex-col gap-[12px] items-start self-stretch z-[115]">
-                <h1 className="font-arima text-[48px] font-medium leading-[1.2] tracking-[0.48px] text-[#1a1a1a]">
-                  Our <span className="font-extrabold text-white">Ecosystem</span>
+<h1 className="heading-h2-medium leading-[1.2] tracking-[0.48px] text-[#1a1a1a]">
+                  Our <span className="font-extrabold gradient-text-purple">Ecosystem</span>
                 </h1>
                 {["Personal & career mentoring, counselling, coaching", "Emotional healing & mental wellness", "Skill & confidence development", "Career clarity & transitions", "Daily growth tools via mobile Web-App"].map((t) => (
-                  <span key={t} className="font-mulish text-[16px] font-light leading-[1.4] text-[#4a4a4a]">• {t}</span>
+                  <span key={t} className="body-b2 font-light leading-[1.4] text-[#4a4a4a]">• {t}</span>
                 ))}
               </div>
               <div className="flex flex-col gap-[16px] z-[122]">
-                <p className="font-mulish text-[20px] font-light text-[#4a4a4a]">You don’t need multiple solutions.</p>
-                <p className="font-mulish text-[20px] font-bold text-[#4a4a4a]">You need one aligned ecosystem.</p>
+                <p className="body-b1 text-[#4a4a4a]">You don't need multiple solutions.</p>
+                <p className="body-b1 font-bold text-[#4a4a4a]">You need one aligned ecosystem.</p>
               </div>
             </div>
             <div className="w-[46.23%] h-[45.28%] absolute top-[24.39%] left-[51.5%] z-[100]">

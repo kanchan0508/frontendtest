@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Arima, Mulish, Overpass, Lato, Inter, Poppins } from "next/font/google";
+import GlobalHeader from "@/components/layout/GlobalHeader";
 import "./globals.css";
 
 const arima = Arima({
@@ -55,6 +56,7 @@ export default function RootLayout({
       <body
         className={`${arima.variable} ${mulish.variable} ${overpass.variable} ${lato.variable} ${inter.variable} ${poppins.variable} antialiased`}
       >
+        <GlobalHeader />
         {children}
       </body>
     </html>

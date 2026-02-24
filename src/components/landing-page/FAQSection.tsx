@@ -43,7 +43,7 @@ export default function FAQSection() {
   };
 
   return (
-    <div className="flex pt-[100px] pr-0 pb-[100px] pl-0 flex-col gap-[10px] justify-center items-center self-stretch shrink-0 flex-nowrap relative z-[311]">
+    <div className="flex py-[50px] pr-0 pl-0 flex-col gap-[10px] justify-center items-center self-stretch shrink-0 flex-nowrap relative z-[311]">
       <div className="flex w-full max-w-[1120px] pt-[24px] pr-0 pb-[24px] pl-0 gap-[36px] items-start lg:items-center shrink-0 flex-wrap lg:flex-nowrap bg-white rounded-[32px] relative z-[312] min-h-[580px]">
         <div className="flex w-full lg:w-1/2 justify-center items-center shrink-0 flex-nowrap relative z-[313]">
           <div className="w-[449.323px] h-[466.999px] shrink-0 relative z-[314]">
@@ -63,7 +63,7 @@ export default function FAQSection() {
           </div>
         </div>
         <div className="flex w-full lg:w-1/2 flex-col gap-[16px] items-start shrink-0 flex-nowrap bg-white rounded-[16px] px-8 lg:px-4 relative z-[324]">
-          <span className="h-[78px] self-stretch shrink-0 basis-auto font-arima text-[48px] font-medium leading-[78px] text-text-dark relative text-left whitespace-nowrap z-[325]">
+          <span className="h-[78px] self-stretch shrink-0 basis-auto heading-h2-medium leading-[78px] text-text-dark relative text-left whitespace-nowrap z-[325]">
             FAQ&apos;s
           </span>
           <div className="flex flex-col gap-[16px] items-start self-stretch shrink-0 flex-nowrap relative z-[326]">
@@ -74,7 +74,7 @@ export default function FAQSection() {
                 className={`flex flex-col items-start self-stretch shrink-0 transition-all duration-300 cursor-pointer rounded-[16px] border-solid border-[0.67px] ${openId === item.id ? 'border-primary-purple bg-[#fbf8ff]' : 'border-border-light bg-white'} relative overflow-hidden z-[327]`}
               >
                 <div className="flex w-full pt-[20px] pr-[24px] pb-[20px] pl-[24px] justify-between items-center shrink-0 flex-nowrap relative z-[328]">
-                  <span className={`grow font-mulish text-[16px] font-medium leading-[24px] ${openId === item.id ? 'text-text-dark' : 'text-text-gray'} relative text-left z-[330]`}>
+                  <span className={`grow subheading-md leading-[24px] ${openId === item.id ? 'text-text-dark' : 'text-text-gray'} relative text-left z-[330]`}>
                     {item.question}
                   </span>
                   <div 
@@ -85,7 +85,7 @@ export default function FAQSection() {
                 <div 
                   className={`self-stretch overflow-hidden transition-all duration-300 ease-in-out ${openId === item.id ? 'max-h-[200px] opacity-100 pb-[24px] px-[24px]' : 'max-h-0 opacity-0 px-[24px]'}`}
                 >
-                  <span className="font-mulish text-[14px] font-normal leading-[22px] text-text-gray block">
+                  <span className="btn-text-sm leading-[22px] text-text-gray block">
                     {item.answer}
                   </span>
                 </div>

@@ -3,18 +3,18 @@ import React from "react";
 export default function Footer({ showCTA = true }: { showCTA?: boolean }) {
   return (
     <>
-      <div className="flex flex-col gap-[100px] items-center self-stretch shrink-0 flex-nowrap relative z-[357]">
+      <div className="flex flex-col gap-[50px] items-center self-stretch shrink-0 flex-nowrap relative z-[357]">
         {showCTA && (
-          <div className="flex w-full max-w-[1120px] pt-[100px] pr-[48px] pb-[100px] pl-[48px] flex-col gap-[48px] justify-center items-center shrink-0 flex-nowrap bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-02-11/DzxJrb1vyM.png)] bg-cover bg-no-repeat rounded-[36px] relative overflow-hidden z-[358]">
+          <div className="flex w-full max-w-[1120px] py-[50px] pr-[48px] pl-[48px] flex-col gap-[48px] justify-center items-center shrink-0 flex-nowrap bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-02-11/DzxJrb1vyM.png)] bg-cover bg-no-repeat rounded-[36px] relative overflow-hidden z-[358]">
           <div className="flex w-full max-w-[1016px] flex-col items-center shrink-0 flex-nowrap relative z-[359]">
             <div className="w-full max-w-[1016px] self-stretch shrink-0 font-arima text-[48px] font-medium leading-[78px] relative text-center whitespace-nowrap z-[360]">
-              <span className="font-arima text-[48px] font-medium leading-[78.384px] text-white relative text-center">
+              <span className="heading-h2-medium leading-[78.384px] text-white relative text-center">
                 Your Growth Deserves{" "}
               </span>
-              <span className="font-arima text-[48px] font-black leading-[78.384px] text-white relative text-center">
+              <span className="heading-h2-black leading-[78.384px] text-white relative text-center">
                 Attention
               </span>
-              <span className="font-arima text-[48px] font-medium leading-[78.384px] text-white relative text-center">
+              <span className="heading-h2-medium leading-[78.384px] text-white relative text-center">
                 {" "}
                 — Not Delay
               </span>
@@ -39,7 +39,7 @@ export default function Footer({ showCTA = true }: { showCTA?: boolean }) {
             <div className="w-[33.265px] h-[25.381px] shrink-0 bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-02-11/9mpdoXTDo2.png)] bg-cover bg-no-repeat absolute top-[7.054px] left-[704.141px] z-[367]" />
           </div>
           <div className="flex w-[220px] h-[48px] pt-0 pr-[32px] pb-0 pl-[32px] gap-[4px] justify-center items-center shrink-0 flex-nowrap rounded-[12px] border-solid border border-white relative overflow-hidden cursor-pointer hover:bg-white hover:text-footer-bg transition-all group z-[368]">
-            <span className="flex w-[87px] h-[11px] justify-center items-start shrink-0 basis-auto font-arima text-[16px] font-bold leading-[11px] text-white group-hover:text-footer-bg relative text-center whitespace-nowrap z-[369]">
+            <span className="flex w-[87px] h-[11px] justify-center items-start shrink-0 basis-auto btn-text-lg leading-[11px] text-white group-hover:text-footer-bg relative text-center whitespace-nowrap z-[369]">
               Explore Self
             </span>
           </div>
@@ -50,7 +50,7 @@ export default function Footer({ showCTA = true }: { showCTA?: boolean }) {
             <div className="flex gap-[100px] items-start self-stretch shrink-0 flex-nowrap relative z-[372]">
               <div className="flex w-[184px] h-[357px] flex-col gap-[24px] items-center shrink-0 flex-nowrap relative overflow-hidden z-[373]">
                 <div className="flex w-[177px] flex-col gap-[8px] items-center shrink-0 flex-nowrap relative z-[374]">
-                  <span className="h-[25px] shrink-0 basis-auto font-mulish text-[20px] font-semibold leading-[25px] text-white relative text-left whitespace-nowrap z-[375]">
+                  <span className="h-[25px] shrink-0 basis-auto body-b1 leading-[25px] text-white relative text-left whitespace-nowrap z-[375]">
                     Download the App
                   </span>
                   <div className="flex w-[84px] gap-[20px] items-center shrink-0 flex-nowrap relative z-[376]">
