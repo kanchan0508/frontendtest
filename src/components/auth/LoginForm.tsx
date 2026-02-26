@@ -1,21 +1,20 @@
-"use client";
 import React from "react";
-import { useRouter } from "next/navigation";
+import { useNavigate } from "react-router-dom";
 
 interface LoginFormProps {
   mode: "login" | "signup";
 }
 
 export default function LoginForm({ mode }: LoginFormProps) {
-  const router = useRouter();
+  const navigate = useNavigate();
   const isLogin = mode === "login";
   const [agreed, setAgreed] = React.useState(false);
 
   const handleToggle = () => {
     if (isLogin) {
-      router.push("/signup");
+      navigate("/signup");
     } else {
-      router.push("/login");
+      navigate("/login");
     }
   };
 
@@ -68,8 +67,7 @@ export default function LoginForm({ mode }: LoginFormProps) {
                 className={`flex h-[53px] pt-0 pr-[24px] pb-0 pl-[32px] gap-[12px] justify-center items-center self-stretch shrink-0 flex-nowrap rounded-[12px] border-solid border border-[#b95af9] relative overflow-hidden cursor-pointer transition-colors z-[38] ${!agreed ? 'opacity-50 cursor-not-allowed grayscale' : 'hover:bg-[#b95af9]/5'}`}
                 onClick={() => {
                   if (agreed) {
-                    // Logic to simulate login success
-                    router.push("/dashboard");
+                    navigate("/dashboard");
                   }
                 }}
               >
@@ -85,7 +83,7 @@ export default function LoginForm({ mode }: LoginFormProps) {
           <div className="flex h-[53px] pt-0 pr-[32px] pb-0 pl-[32px] gap-[4px] justify-center items-center self-stretch shrink-0 flex-nowrap rounded-[12px] relative overflow-hidden z-[41]">
             <div className="w-auto shrink-0 font-arima text-[16px] font-bold leading-[11px] relative text-center whitespace-nowrap z-[42]">
               <span className="font-overpass text-[16px] font-bold leading-[19.2px] text-[#1a1a1a] relative text-center">
-                {isLogin ? "Don’t have an account?" : "Already have an account?"}
+                {isLogin ? "Don't have an account?" : "Already have an account?"}
               </span>
               <span 
                 className="font-overpass text-[16px] font-bold leading-[19.2px] text-[#b95af9] relative text-center cursor-pointer hover:underline ml-1"

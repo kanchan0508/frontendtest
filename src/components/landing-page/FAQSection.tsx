@@ -1,5 +1,3 @@
-"use client";
-
 import React, { useState } from "react";
 
 const faqData = [
@@ -43,10 +41,10 @@ export default function FAQSection() {
   };
 
   return (
-    <div className="flex py-[50px] pr-0 pl-0 flex-col gap-[10px] justify-center items-center self-stretch shrink-0 flex-nowrap relative z-[311]">
-      <div className="flex w-full max-w-[1120px] pt-[24px] pr-0 pb-[24px] pl-0 gap-[36px] items-start lg:items-center shrink-0 flex-wrap lg:flex-nowrap bg-white rounded-[32px] relative z-[312] min-h-[580px]">
-        <div className="flex w-full lg:w-1/2 justify-center items-center shrink-0 flex-nowrap relative z-[313]">
-          <div className="w-[449.323px] h-[466.999px] shrink-0 relative z-[314]">
+    <section className="relative z-[311] flex w-full items-center justify-center py-[50px]">
+      <div className="relative z-[312] flex w-full max-w-[1540px] flex-col items-center gap-[18px] rounded-[32px] bg-white px-3 py-[18px] sm:px-4 sm:py-[22px] md:gap-[24px] md:px-6 lg:flex-row lg:items-center lg:gap-[32px] lg:px-8 lg:py-[24px] 2xl:max-w-[1700px] 2xl:gap-[44px] 2xl:px-12 2xl:py-[30px]">
+        <div className="relative z-[313] flex w-full justify-center items-center lg:w-1/2">
+          <div className="relative z-[314] h-[260px] w-[250px] shrink-0 sm:h-[330px] sm:w-[315px] md:h-[400px] md:w-[385px] lg:h-[430px] lg:w-[420px] xl:h-[466.999px] xl:w-[449.323px] 2xl:h-[520px] 2xl:w-[500px]">
             <div className="w-full h-full absolute top-0 left-0 z-[323]">
               <div className="w-[31.54%] h-[26.64%] bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-02-11/YC7jn9bNrT.png)] bg-[length:100%_100%] bg-no-repeat absolute top-0 left-[65.66%] z-[322]" />
               <div className="w-[98.39%] h-[83.77%] bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-02-11/URA6wzyi27.png)] bg-[length:100%_100%] bg-no-repeat absolute top-[0.21%] left-[0.77%] z-[315]" />
@@ -62,19 +60,19 @@ export default function FAQSection() {
             </div>
           </div>
         </div>
-        <div className="flex w-full lg:w-1/2 flex-col gap-[16px] items-start shrink-0 flex-nowrap bg-white rounded-[16px] px-8 lg:px-4 relative z-[324]">
-          <span className="h-[78px] self-stretch shrink-0 basis-auto heading-h2-medium leading-[78px] text-text-dark relative text-left whitespace-nowrap z-[325]">
+        <div className="relative z-[324] flex w-full flex-col items-start gap-[12px] rounded-[16px] bg-white px-2 sm:px-4 md:px-2 lg:w-1/2 lg:px-1 xl:px-4 2xl:px-6">
+          <span className="heading-h2-medium relative z-[325] text-left text-[40px] leading-[1.1] text-text-dark sm:text-[48px] md:text-[56px] lg:text-[62px] xl:text-[70px] 2xl:text-[78px]">
             FAQ&apos;s
           </span>
-          <div className="flex flex-col gap-[16px] items-start self-stretch shrink-0 flex-nowrap relative z-[326]">
+          <div className="relative z-[326] flex w-full flex-col items-start gap-[12px] sm:gap-[14px] md:gap-[16px]">
             {faqData.map((item) => (
               <div 
                 key={item.id}
                 onClick={() => toggleFAQ(item.id)}
                 className={`flex flex-col items-start self-stretch shrink-0 transition-all duration-300 cursor-pointer rounded-[16px] border-solid border-[0.67px] ${openId === item.id ? 'border-primary-purple bg-[#fbf8ff]' : 'border-border-light bg-white'} relative overflow-hidden z-[327]`}
               >
-                <div className="flex w-full pt-[20px] pr-[24px] pb-[20px] pl-[24px] justify-between items-center shrink-0 flex-nowrap relative z-[328]">
-                  <span className={`grow subheading-md leading-[24px] ${openId === item.id ? 'text-text-dark' : 'text-text-gray'} relative text-left z-[330]`}>
+                <div className="relative z-[328] flex w-full items-center justify-between gap-3 px-[14px] py-[14px] sm:px-[18px] sm:py-[16px] md:px-[20px] md:py-[18px] lg:px-[22px] lg:py-[20px]">
+                  <span className={`grow subheading-md text-[14px] leading-[1.3] sm:text-[15px] md:text-[16px] md:leading-[24px] ${openId === item.id ? 'text-text-dark' : 'text-text-gray'} relative text-left z-[330]`}>
                     {item.question}
                   </span>
                   <div 
@@ -83,9 +81,9 @@ export default function FAQSection() {
                   />
                 </div>
                 <div 
-                  className={`self-stretch overflow-hidden transition-all duration-300 ease-in-out ${openId === item.id ? 'max-h-[200px] opacity-100 pb-[24px] px-[24px]' : 'max-h-0 opacity-0 px-[24px]'}`}
+                  className={`self-stretch overflow-hidden transition-all duration-300 ease-in-out ${openId === item.id ? 'max-h-[260px] opacity-100 pb-[16px] px-[14px] sm:pb-[18px] sm:px-[18px] md:pb-[20px] md:px-[20px] lg:pb-[24px] lg:px-[22px]' : 'max-h-0 opacity-0 px-[14px] sm:px-[18px] md:px-[20px] lg:px-[22px]'}`}
                 >
-                  <span className="btn-text-sm leading-[22px] text-text-gray block">
+                  <span className="btn-text-sm block text-[13px] leading-[1.45] text-text-gray sm:text-[14px] sm:leading-[22px]">
                     {item.answer}
                   </span>
                 </div>
@@ -94,6 +92,6 @@ export default function FAQSection() {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

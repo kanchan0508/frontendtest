@@ -10,10 +10,10 @@ import TestimonialsSection from "@/components/landing-page/TestimonialsSection";
 import FAQSection from "@/components/landing-page/FAQSection";
 import Footer from "@/components/landing-page/Footer";
 
-export default function Main() {
+export default function Home() {
   return (
-    <div className="main-container w-full max-w-[1440px] bg-[#f7f9fc] relative overflow-x-hidden mx-auto my-0">
-      <div className="flex w-full max-w-[1440px] pt-0 flex-col items-center flex-nowrap relative z-[5]">
+    <div className="main-container w-full  bg-[#f7f9fc] relative overflow-x-hidden mx-auto my-0">
+      <div className="flex w-full  pt-0 flex-col items-center flex-nowrap relative z-[5]">
         <Hero />
         <HowItWorks />
         <TopicsSection />

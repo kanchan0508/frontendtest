@@ -1,14 +1,13 @@
-"use client";
 import React from "react";
-import { usePathname } from "next/navigation";
+import { useLocation } from "react-router-dom";
 import TopBar from "@/components/layout/TopBar";
 import Navbar from "@/components/layout/Navbar";
 
 export default function GlobalHeader() {
-  const pathname = usePathname();
+  const location = useLocation();
 
   // Hide header on dashboard pages
-  if (pathname?.startsWith("/dashboard")) {
+  if (location.pathname.startsWith("/dashboard")) {
     return null;
   }
 

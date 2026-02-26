@@ -4,12 +4,12 @@
   /* ========================================
      FONT FAMILIES
      ======================================== */
-  --font-arima: var(--font-arima);
-  --font-mulish: var(--font-mulish);
-  --font-overpass: var(--font-overpass);
-  --font-lato: var(--font-lato);
-  --font-inter: var(--font-inter);
-  --font-poppins: var(--font-poppins);
+  --font-arima: 'Arima', cursive;
+  --font-mulish: 'Mulish', sans-serif;
+  --font-overpass: 'Overpass', sans-serif;
+  --font-lato: 'Lato', sans-serif;
+  --font-inter: 'Inter', sans-serif;
+  --font-poppins: 'Poppins', sans-serif;
 
   /* ========================================
      BRAND COLORS

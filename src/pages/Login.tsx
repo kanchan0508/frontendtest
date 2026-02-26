@@ -1,13 +1,12 @@
-"use client";
 import React from "react";
 import Footer from "@/components/landing-page/Footer";
 import LoginForm from "@/components/auth/LoginForm";
 
-export default function SignUp() {
+export default function Login() {
   return (
     <div className="main-container w-full max-w-[1440px] bg-[#fbfcfe] relative overflow-x-hidden mx-auto my-0">
       <div className="min-h-[800px] flex items-center justify-center relative">
-        {/* Decorative Background Elements from User code */}
+        {/* Decorative Background Elements */}
         <div className="w-[101.253px] h-[101.253px] bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-02-11/QQDwXbM6Jv.png)] bg-[length:100%_100%] bg-no-repeat absolute top-[50px] right-[15%] z-[10]" />
         
         <div className="w-[100%] h-[100%] absolute inset-0 pointer-events-none overflow-hidden">
@@ -18,7 +17,7 @@ export default function SignUp() {
 
         {/* Login Form Container */}
         <div className="z-50 py-20 px-4">
-          <LoginForm mode="signup" />
+          <LoginForm mode="login" />
         </div>
       </div>
 

@@ -1,14 +1,13 @@
-"use client";
 import React from "react";
-import Link from "next/link";
+import { Link } from "react-router-dom";
 
-export default function Main() {
+export default function Dashboard() {
   return (
     <div className="main-container w-full min-h-screen bg-[#f7f9fc] relative flex overflow-x-hidden">
       {/* Sidebar - Made sticky and fixed width */}
       <aside className="w-[287px] h-screen sticky top-0 flex flex-col gap-[98px] items-start bg-white z-[20] shrink-0 border-r border-[#eaecf0]">
         <div className="flex justify-center items-center w-full pt-6 pb-2">
-          <Link href="/">
+          <Link to="/">
             <div className="w-[61.927px] h-[64px] bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-02-11/ogLNSxSDnT.png)] bg-contain bg-no-repeat cursor-pointer" />
           </Link>
         </div>
@@ -105,7 +104,7 @@ export default function Main() {
                     <div className="relative z-30 flex flex-col items-center justify-center h-full text-center p-8 gap-6 max-w-[60%] mx-auto">
                       <span className="font-mulish text-base font-normal text-white uppercase tracking-wider">Daily Affirmation</span>
                       <h2 className="font-arima text-2xl font-bold text-white uppercase leading-tight drop-shadow-md">
-                        Take a moment to check today’s affirmation
+                        Take a moment to check today's affirmation
                       </h2>
                       <button className="h-10 px-8 bg-white rounded-xl text-[#407bff] font-mulish font-bold hover:shadow-lg transition-all active:scale-95">
                         View Affirmation

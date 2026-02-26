@@ -1,15 +1,14 @@
-"use client";
 import React, { useState } from "react";
-import Link from "next/link";
-
-import { usePathname } from "next/navigation";
+import { Link, useLocation } from "react-router-dom";
+import { HiMenu, HiX } from "react-icons/hi";
 
 export default function Navbar() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const pathname = usePathname();
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation();
 
-  const isLoginPage = pathname === "/login";
-  const isSignUpPage = pathname === "/signup";
+  const isLoginPage = location.pathname === "/login";
+  const isSignUpPage = location.pathname === "/signup";
 
   const getAuthButtonProps = () => {
     if (isSignUpPage) return { label: "Log In", href: "/login" };
@@ -19,119 +18,106 @@ export default function Navbar() {
 
   const { label, href } = getAuthButtonProps();
 
-  return (
-    <div className="flex w-full max-w-[1120px] mx-auto min-h-[80px] py-2 px-4 justify-between items-center self-stretch shrink-0 flex-nowrap relative z-[435]">
-      {/* Logo */}
-      <Link href="/" className="flex w-[61.927px] h-[64px] gap-[12px] items-center shrink-0 flex-nowrap bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-02-11/6zw7Csmgbv.png)] bg-contain bg-center bg-no-repeat relative cursor-pointer z-[436]" />
+  const navItems = [
+    { label: "For Businesses", href: "#" },
+    { label: "For Providers", href: "#" },
+    { label: "Resources", href: "#" },
+    { label: "About Us", href: "#" },
+  ];
 
-      {/* Nav Links */}
-      <div className="flex w-[681px] justify-center items-center self-stretch shrink-0 flex-nowrap relative z-[437]">
-        {/* For You Dropdown Trigger */}
-        <div
-          className="relative h-full flex items-center"
-          onMouseEnter={() => setIsDropdownOpen(true)}
-          onMouseLeave={() => setIsDropdownOpen(false)}
-        >
+  return (
+    <div className="w-full bg-white relative z-[435]">
+      <div className="flex w-full  mx-auto h-[70px] md:h-[80px] py-2 px-4 md:px-10 justify-between items-center">
+        {/* Logo */}
+        <Link to="/" className="flex w-[50px] md:w-[61.927px] h-[52px] md:h-[64px] shrink-0 bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-02-11/6zw7Csmgbv.png)] bg-contain bg-center bg-no-repeat cursor-pointer" />
+
+        {/* Desktop Nav Links */}
+        <div className="hidden lg:flex items-center gap-x-4 xl:gap-x-8">
           <div
-            className={`flex w-[140px] h-[48px] pt-0 pr-[24px] pb-0 pl-[32px] gap-[4px] justify-center items-center shrink-0 flex-nowrap rounded-[32px] relative overflow-visible cursor-pointer transition-all z-[438] ${
-              isDropdownOpen ? "bg-light-purple-bg" : "hover:bg-light-purple-bg"
-            }`}
+            className="relative h-full flex items-center"
+            onMouseEnter={() => setIsDropdownOpen(true)}
+            onMouseLeave={() => setIsDropdownOpen(false)}
           >
-            <span className="flex w-[56px] h-[11px] justify-center items-start shrink-0 basis-auto nav-text leading-[11px] text-primary-purple relative text-center whitespace-nowrap z-[439]">
-              For You
-            </span>
-            <div
-              className={`w-[24px] h-[24px] shrink-0 bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-02-11/o65tajpwS2.png)] bg-cover bg-no-repeat transition-transform duration-300 z-[440] ${
-                isDropdownOpen ? "rotate-180" : ""
-              }`}
-            />
-            {/* Active Underline */}
+            <div className={`flex px-3 h-[40px] gap-1 justify-center items-center rounded-[32px] cursor-pointer transition-all ${isDropdownOpen ? "bg-light-purple-bg" : "hover:bg-light-purple-bg"}`}>
+              <span className="nav-text text-primary-purple text-sm xl:text-base">For You</span>
+              <div className={`w-4 h-4 md:w-5 md:h-5 bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-02-11/o65tajpwS2.png)] bg-cover transition-transform duration-300 ${isDropdownOpen ? "rotate-180" : ""}`} />
+            </div>
+
             {isDropdownOpen && (
-              <div className="absolute bottom-[-8px] left-[10%] w-[80%] h-[2px] bg-primary-purple rounded-full z-[454]" />
+              <div className="absolute top-[50px] left-0 w-[500px] xl:w-[585px] bg-white shadow-xl rounded-[24px] flex p-6 xl:p-8 gap-6 xl:gap-8 border border-[#F2F2F2] z-[1000] animate-in fade-in slide-in-from-top-2 duration-300">
+                <div className="flex flex-col gap-5 w-[220px] xl:w-[260px]">
+                  <div className="flex px-4 py-2 bg-[#F0F9FA] rounded-[16px] cursor-pointer hover:bg-[#E0F3F5]"><span className="text-sm xl:subheading-md text-[#025B65]">Value Gifts</span></div>
+                  <div className="flex px-4 py-2 justify-between items-center cursor-pointer hover:bg-[#F0F9FA] rounded-[16px] transition-colors group"><span className="text-sm xl:subheading-md text-[#025B65]">Module to EAR</span><ChevronRight /></div>
+                  <div className="flex px-4 py-2 justify-between items-center cursor-pointer hover:bg-[#F0F9FA] rounded-[16px] transition-colors group"><span className="text-sm xl:subheading-md text-[#025B65]">Softskill Course Bouquet</span><ChevronRight /></div>
+                  <div className="flex px-4 py-2 cursor-pointer hover:bg-[#F0F9FA] rounded-[16px] transition-colors group"><span className="text-sm xl:subheading-md text-[#025B65]">Connect to Coach</span></div>
+                </div>
+                <div className="w-[1px] bg-[#E5E5E5] self-stretch" />
+                <div className="flex flex-col gap-5 pt-1">
+                  {["Affirmation Cards", "Wellness Gauge", "Psychometric Assessment"].map(item => (
+                    <div key={item} className="px-4 py-1 cursor-pointer hover:text-primary-purple transition-colors"><span className="text-sm xl:subheading-md text-[#025B65]">{item}</span></div>
+                  ))}
+                </div>
+              </div>
             )}
           </div>
 
-          {/* Combined Dropdown Menu */}
-          {isDropdownOpen && (
-            <div className="absolute top-[56px] left-0 w-[585px] bg-white shadow-[0px_4px_24px_rgba(0,0,0,0.1)] rounded-[24px] flex p-8 gap-8 border border-[#F2F2F2] z-[1000] animate-in fade-in slide-in-from-top-2 duration-300">
-              {/* Left Column */}
-              <div className="flex flex-col gap-6 w-[260px]">
-                <div className="flex px-4 py-3 bg-[#F0F9FA] rounded-[16px] cursor-pointer hover:bg-[#E0F3F5] transition-colors group">
-                  <span className="subheading-md text-[#025B65]">Value Gifts</span>
-                </div>
-                <div className="flex px-4 py-3 justify-between items-center cursor-pointer hover:bg-[#F0F9FA] rounded-[16px] transition-colors group">
-                  <span className="subheading-md text-[#025B65]">Module to EAR</span>
-                  <ChevronRight />
-                </div>
-                <div className="flex px-4 py-3 justify-between items-center cursor-pointer hover:bg-[#F0F9FA] rounded-[16px] transition-colors group">
-                  <span className="subheading-md text-[#025B65]">Softskill Course Bouquet</span>
-                  <ChevronRight />
-                </div>
-                <div className="flex px-4 py-3 cursor-pointer hover:bg-[#F0F9FA] rounded-[16px] transition-colors group">
-                  <span className="subheading-md text-[#025B65]">Connect to Coach</span>
+          {navItems.map((item) => (
+            <div key={item.label} className="px-3 h-[40px] flex justify-center items-center rounded-[32px] cursor-pointer hover:bg-light-purple-bg transition-colors">
+              <span className="nav-text text-primary-purple text-sm xl:text-base whitespace-nowrap">{item.label}</span>
+            </div>
+          ))}
+        </div>
+
+        {/* Desktop Auth Buttons */}
+        <div className="hidden lg:flex items-center gap-x-2 xl:gap-x-4">
+          <Link to={href} className="px-4 xl:px-6 h-[40px] xl:h-[48px] flex justify-center items-center rounded-[12px] hover:bg-light-purple-bg transition-colors">
+            <span className="nav-text text-primary-purple text-sm xl:text-base">{label}</span>
+          </Link>
+          <Link to="/signup" className="px-5 xl:px-8 h-[40px] xl:h-[48px] flex justify-center items-center bg-primary-purple rounded-[12px] hover:bg-secondary-purple shadow-sm transition-all">
+            <span className="text-xs xl:btn-text-lg text-white font-bold whitespace-nowrap">Try For Free</span>
+          </Link>
+        </div>
+
+        {/* Mobile Menu Button */}
+        <button 
+          className="lg:hidden p-2 text-primary-purple focus:outline-none"
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+        >
+          {isMobileMenuOpen ? <HiX size={28} /> : <HiMenu size={28} />}
+        </button>
+      </div>
+
+      {/* Mobile Sidebar Overlay */}
+      {isMobileMenuOpen && (
+        <div className="lg:hidden fixed inset-0 z-[2000]">
+          <div className="fixed inset-0 bg-black/50 transition-opacity" onClick={() => setIsMobileMenuOpen(false)} />
+          <div className="fixed inset-y-0 right-0 w-[280px] bg-white shadow-2xl flex flex-col p-6 animate-in slide-in-from-right duration-300">
+            <div className="flex justify-end mb-8">
+              <button onClick={() => setIsMobileMenuOpen(false)} className="text-primary-purple"><HiX size={32} /></button>
+            </div>
+            
+            <div className="flex flex-col gap-6">
+              <div className="flex flex-col gap-4">
+                <span className="text-sm font-bold text-gray-400 uppercase tracking-wider">Navigation</span>
+                <div className="flex flex-col gap-2">
+                  <div className="p-3 bg-light-purple-bg rounded-xl text-primary-purple font-bold">For You</div>
+                  {navItems.map(item => (
+                    <div key={item.label} className="p-3 hover:bg-gray-50 rounded-xl transition-colors text-text-gray font-medium">{item.label}</div>
+                  ))}
                 </div>
               </div>
 
-              {/* Vertical Divider */}
-              <div className="w-[1px] bg-[#E5E5E5] self-stretch" />
-
-              {/* Right Column */}
-              <div className="flex flex-col gap-6 pt-2">
-                <div className="flex px-4 py-2 cursor-pointer hover:text-primary-purple transition-colors">
-                  <span className="subheading-md text-[#025B65] hover:text-[#025B65]/80">Affirmation Cards</span>
-                </div>
-                <div className="flex px-4 py-2 cursor-pointer hover:text-primary-purple transition-colors">
-                  <span className="subheading-md text-[#025B65] hover:text-[#025B65]/80">Wellness Gauge</span>
-                </div>
-                <div className="flex px-4 py-2 cursor-pointer hover:text-primary-purple transition-colors">
-                  <span className="subheading-md text-[#025B65] hover:text-[#025B65]/80">Psychometric Assessment</span>
+              <div className="flex flex-col gap-4 mt-4">
+                <span className="text-sm font-bold text-gray-400 uppercase tracking-wider">Account</span>
+                <div className="flex flex-col gap-3">
+                  <Link to={href} className="w-full h-12 flex items-center justify-center rounded-xl border-2 border-primary-purple text-primary-purple font-bold" onClick={() => setIsMobileMenuOpen(false)}>{label}</Link>
+                  <Link to="/signup" className="w-full h-12 flex items-center justify-center rounded-xl bg-primary-purple text-white font-bold shadow-lg" onClick={() => setIsMobileMenuOpen(false)}>Try For Free</Link>
                 </div>
               </div>
             </div>
-          )}
+          </div>
         </div>
-
-        <div className="flex w-[156px] h-[48px] pt-0 pr-[24px] pb-0 pl-[24px] gap-[4px] justify-center items-center shrink-0 flex-nowrap rounded-[32px] relative overflow-hidden cursor-pointer hover:bg-light-purple-bg transition-colors z-[441]">
-          <span className="flex w-[108px] h-[11px] justify-center items-start shrink-0 basis-auto nav-text leading-[11px] text-primary-purple relative text-center whitespace-nowrap z-[442]">
-            For Businesses{" "}
-          </span>
-        </div>
-        <div className="flex w-[147px] h-[48px] pt-0 pr-[24px] pb-0 pl-[24px] gap-[4px] justify-center items-center shrink-0 flex-nowrap rounded-[32px] relative overflow-hidden cursor-pointer hover:bg-light-purple-bg transition-colors z-[443]">
-          <span className="flex w-[99px] h-[11px] justify-center items-start shrink-0 basis-auto nav-text leading-[11px] text-primary-purple relative text-center whitespace-nowrap z-[444]">
-            For Providers
-          </span>
-        </div>
-        <div className="flex w-[124px] h-[48px] pt-0 pr-[24px] pb-0 pl-[24px] gap-[4px] justify-center items-center shrink-0 flex-nowrap rounded-[32px] relative overflow-hidden cursor-pointer hover:bg-light-purple-bg transition-colors z-[445]">
-          <span className="flex w-[76px] h-[11px] justify-center items-start shrink-0 basis-auto nav-text leading-[11px] text-primary-purple relative text-center whitespace-nowrap z-[446]">
-            Resources
-          </span>
-        </div>
-        <div className="flex w-[112px] h-[48px] pt-0 pr-[24px] pb-0 pl-[24px] gap-[4px] justify-center items-center shrink-0 flex-nowrap rounded-[32px] relative overflow-hidden cursor-pointer hover:bg-light-purple-bg transition-colors z-[447]">
-          <span className="flex w-[64px] h-[11px] justify-center items-start shrink-0 basis-auto nav-text leading-[11px] text-primary-purple relative text-center whitespace-nowrap z-[448]">
-            About Us
-          </span>
-        </div>
-      </div>
-
-      {/* Auth Buttons */}
-      <div className="flex w-[261px] justify-end items-center shrink-0 flex-nowrap relative z-[449]">
-        <Link
-          href={href}
-          className="flex w-[107px] h-[48px] pt-0 pr-[32px] pb-0 pl-[32px] gap-[4px] justify-center items-center shrink-0 flex-nowrap rounded-[12px] relative overflow-hidden cursor-pointer hover:bg-light-purple-bg transition-colors z-[450]"
-        >
-          <span className="flex w-auto h-[11px] justify-center items-start shrink-0 basis-auto nav-text leading-[11px] text-primary-purple relative text-center whitespace-nowrap z-[451]">
-            {label}
-          </span>
-        </Link>
-        <Link
-          href="/signup"
-          className="flex w-[154px] h-[48px] pt-0 pr-[32px] pb-0 pl-[32px] gap-[4px] justify-center items-center shrink-0 flex-nowrap bg-primary-purple rounded-[12px] relative overflow-hidden cursor-pointer hover:bg-secondary-purple transition-colors z-[452]"
-        >
-          <span className="flex w-[89px] h-[11px] justify-center items-start shrink-0 basis-auto btn-text-lg leading-[11px] text-white relative text-center whitespace-nowrap z-[453]">
-            Try For Free
-          </span>
-        </Link>
-      </div>
+      )}
     </div>
   );
 }

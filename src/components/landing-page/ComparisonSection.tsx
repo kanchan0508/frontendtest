@@ -1,121 +1,122 @@
 import React from "react";
 
+const comparisonRows = [
+  {
+    label: "A therapist licensed in your state",
+    infoIcon:
+      "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-02-11/N1yAg6PTxv.png",
+    amplIcon:
+      "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-02-11/dhtx6FXwjL.png",
+    inPersonIcon:
+      "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-02-11/dAUxXnDzrm.png",
+  },
+  {
+    label: "A therapist licensed in your state",
+    infoIcon:
+      "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-02-11/9M5iwLHwgg.png",
+    amplIcon:
+      "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-02-11/D9HE2uBE8R.png",
+    inPersonIcon:
+      "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-02-11/v8NiySpjfk.png",
+  },
+  {
+    label: "A therapist licensed in your state",
+    infoIcon:
+      "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-02-11/A61J4QTSUX.png",
+    amplIcon:
+      "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-02-11/f2eiWu1mSP.png",
+    inPersonIcon:
+      "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-02-11/WurYjS18nL.png",
+  },
+  {
+    label: "A therapist licensed in your state",
+    infoIcon:
+      "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-02-11/2H4W83aVJL.png",
+    amplIcon:
+      "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-02-11/EQGOVNEGGG.png",
+    inPersonIcon:
+      "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-02-11/itJtaGjiw7.png",
+  },
+  {
+    label: "A therapist licensed in your state",
+    infoIcon:
+      "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-02-11/kqX3z054ga.png",
+    amplIcon:
+      "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-02-11/uzbUasJDzg.png",
+    inPersonIcon:
+      "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-02-11/FnDFkwmW0d.png",
+  },
+];
+
 export default function ComparisonSection() {
   return (
-    <div className="flex w-full max-w-[1440px] py-[50px] pr-[160px] pl-[160px] flex-col gap-[80px] items-center shrink-0 flex-nowrap relative z-[206]">
-      <div className="flex flex-col gap-[4px] items-center self-stretch shrink-0 flex-nowrap relative z-[207]">
-        <div className="w-full max-w-[1120px] mx-auto shrink-0 font-arima text-[48px] font-medium leading-[78px] relative text-center whitespace-nowrap z-[208]">
-          <span className="heading-h2-medium leading-[78.384px] text-text-dark relative text-center">
-            AMPL{" "}
-          </span>
-          <span className="heading-h2-medium leading-[78.384px] gradient-text-purple relative text-center">
-            vs{" "}
-          </span>
-          <span className="heading-h2-black leading-[78.384px] text-text-dark relative text-center">
+    <section className="relative z-[206] flex w-full flex-col items-center gap-[30px] px-4 py-[50px] md:gap-[42px] md:px-6 lg:gap-[60px] lg:px-10 2xl:gap-[72px] 2xl:px-14">
+      <div className="relative z-[207] flex w-full max-w-[1280px] flex-col items-center gap-[8px]">
+        <h2 className="w-full text-center font-arima text-[40px] font-medium leading-[1.15] text-text-dark md:text-[44px] lg:text-[48px]">
+          <span className="heading-h2-medium">AMPL </span>
+          <span className="heading-h2-medium gradient-text-purple">vs </span>
+          <span className="heading-h2-black relative inline-block">
             In-person
+            <div className="absolute -bottom-[4px] left-[50%] h-[18px] w-[120px] -translate-x-1/2 bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-02-11/LgU93z3Hl5.png)] bg-contain bg-no-repeat md:w-[136px] lg:w-[155px]" />
           </span>
-        </div>
-        <div className="w-[155.074px] h-[19.833px] shrink-0 bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-02-11/LgU93z3Hl5.png)] bg-cover bg-no-repeat absolute top-[52px] left-[664px] z-[209]" />
-        <span className="flex w-full max-w-[1120px] mx-auto h-[54px] justify-center items-center self-stretch shrink-0 body-b2 leading-[24px] text-text-gray tracking-[0.2px] relative text-center z-[210]">
-          We offer practical, easy-to-follow courses designed to help in everyday workplace performance.
-        </span>
+        </h2>
+
+        <p className="body-b2 z-[210] max-w-[1120px] text-center text-[18px] leading-[1.35] text-text-gray md:text-[22px] md:leading-[1.3]">
+          We offer practical, easy-to-follow courses designed to help in
+          everyday workplace performance.
+        </p>
       </div>
-      <div className="flex flex-col w-full max-w-[1120px] shrink-0 relative z-[211]">
-        {/* Header Row */}
-        <div className="flex items-center relative z-[212]">
-          <div className="flex-1 h-[123px]" />
-          <div className="flex w-[236px] h-[123px] justify-center items-center shrink-0 bg-[rgba(96,96,180,0.16)] rounded-t-[12px] relative z-[248]">
-            <span className="heading-h3-medium leading-[65px] text-heading-blue whitespace-nowrap z-[249]">
-              AMPL
-            </span>
-          </div>
-          <div className="flex w-[236px] h-[123px] justify-center items-center shrink-0 relative z-[261]">
-            <span className="heading-h3-medium leading-[65px] text-heading-blue whitespace-nowrap z-[262]">
-              In-person
-            </span>
-          </div>
-        </div>
 
-        {/* Row 1 */}
-        <div className="flex items-center border-solid border-b border-b-light-purple-bg relative z-[214]">
-          <div className="flex flex-1 py-[36px] px-[16px] items-center">
-            <span className="font-mulish text-[20px] font-normal leading-[26px] text-text-dark text-left z-[215]">
-              A therapist licensed in your state
-            </span>
-            <div className="w-[24px] h-[24px] shrink-0 bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-02-11/N1yAg6PTxv.png)] bg-cover bg-no-repeat ml-2 z-[233]" />
+      <div className="scrollbar-hide relative z-[211] w-full overflow-x-auto">
+        <div className="w-[max(940px,100%)] lg:mx-auto lg:max-w-[1120px] 2xl:max-w-[1360px]">
+          <div className="flex items-center">
+            <div className="h-[123px] min-w-[468px] flex-1" />
+            <div className="relative flex h-[123px] w-[236px] shrink-0 items-center justify-center rounded-t-[12px] bg-[rgba(96,96,180,0.16)]">
+              <span className="heading-h3-medium whitespace-nowrap leading-[65px] text-heading-blue">
+                AMPL
+              </span>
+            </div>
+            <div className="flex h-[123px] w-[236px] shrink-0 items-center justify-center">
+              <span className="heading-h3-medium whitespace-nowrap leading-[65px] text-heading-blue">
+                In-person
+              </span>
+            </div>
           </div>
-          <div className="flex w-[236px] justify-center items-center shrink-0 bg-[rgba(96,96,180,0.16)] py-[22px] z-[250]">
-            <div className="w-[64px] h-[64px] shrink-0 bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-02-11/dhtx6FXwjL.png)] bg-cover bg-no-repeat z-[251]" />
-          </div>
-          <div className="flex w-[236px] justify-center items-center shrink-0 py-[22px] z-[263]">
-            <div className="w-[64px] h-[64px] shrink-0 bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-02-11/dAUxXnDzrm.png)] bg-cover bg-no-repeat z-[264]" />
-          </div>
-        </div>
 
-        {/* Row 2 */}
-        <div className="flex items-center border-solid border-b border-b-light-purple-bg relative z-[234]">
-          <div className="flex flex-1 py-[36px] px-[16px] items-center">
-            <span className="font-mulish text-[20px] font-normal leading-[26px] text-text-dark text-left z-[235]">
-              A therapist licensed in your state
-            </span>
-            <div className="w-[24px] h-[24px] shrink-0 bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-02-11/9M5iwLHwgg.png)] bg-cover bg-no-repeat ml-2 z-[236]" />
-          </div>
-          <div className="flex w-[236px] justify-center items-center shrink-0 bg-[rgba(96,96,180,0.16)] py-[22px] z-[252]">
-            <div className="w-[64px] h-[64px] shrink-0 bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-02-11/D9HE2uBE8R.png)] bg-cover bg-no-repeat z-[253]" />
-          </div>
-          <div className="flex w-[236px] justify-center items-center shrink-0 py-[22px] z-[265]">
-            <div className="w-[64px] h-[64px] shrink-0 bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-02-11/v8NiySpjfk.png)] bg-cover bg-no-repeat z-[266]" />
-          </div>
-        </div>
+          {comparisonRows.map((row, index) => (
+            <div
+              key={`${row.label}-${index}`}
+              className="flex items-center border-b border-solid border-b-light-purple-bg"
+            >
+              <div className="flex min-w-[468px] flex-1 items-center px-[16px] py-[28px] lg:py-[36px]">
+                <span className="font-mulish text-[20px] font-normal leading-[26px] text-text-dark">
+                  {row.label}
+                </span>
+                <div
+                  className="ml-2 h-[24px] w-[24px] shrink-0 bg-cover bg-no-repeat"
+                  style={{ backgroundImage: `url(${row.infoIcon})` }}
+                />
+              </div>
 
-        {/* Row 3 */}
-        <div className="flex items-center border-solid border-b border-b-light-purple-bg relative z-[237]">
-          <div className="flex flex-1 py-[36px] px-[16px] items-center">
-            <span className="font-mulish text-[20px] font-normal leading-[26px] text-text-dark text-left z-[238]">
-              A therapist licensed in your state
-            </span>
-            <div className="w-[24px] h-[24px] shrink-0 bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-02-11/A61J4QTSUX.png)] bg-cover bg-no-repeat ml-2 z-[239]" />
-          </div>
-          <div className="flex w-[236px] justify-center items-center shrink-0 bg-[rgba(96,96,180,0.16)] py-[22px] z-[254]">
-            <div className="w-[64px] h-[64px] shrink-0 bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-02-11/f2eiWu1mSP.png)] bg-cover bg-no-repeat z-[255]" />
-          </div>
-          <div className="flex w-[236px] justify-center items-center shrink-0 py-[22px] z-[267]">
-            <div className="w-[64px] h-[64px] shrink-0 bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-02-11/WurYjS18nL.png)] bg-cover bg-no-repeat z-[268]" />
-          </div>
-        </div>
+              <div
+                className={`flex w-[236px] shrink-0 items-center justify-center bg-[rgba(96,96,180,0.16)] py-[18px] lg:py-[22px] ${index === comparisonRows.length - 1 ? "rounded-b-[12px]" : ""}`}
+              >
+                <div
+                  className="h-[64px] w-[64px] shrink-0 bg-cover bg-no-repeat"
+                  style={{ backgroundImage: `url(${row.amplIcon})` }}
+                />
+              </div>
 
-        {/* Row 4 */}
-        <div className="flex items-center border-solid border-b border-b-light-purple-bg relative z-[240]">
-          <div className="flex flex-1 py-[36px] px-[16px] items-center">
-            <span className="font-mulish text-[20px] font-normal leading-[26px] text-text-dark text-left z-[241]">
-              A therapist licensed in your state
-            </span>
-            <div className="w-[24px] h-[24px] shrink-0 bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-02-11/2H4W83aVJL.png)] bg-cover bg-no-repeat ml-2 z-[242]" />
-          </div>
-          <div className="flex w-[236px] justify-center items-center shrink-0 bg-[rgba(96,96,180,0.16)] py-[22px] z-[256]">
-            <div className="w-[64px] h-[64px] shrink-0 bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-02-11/EQGOVNEGGG.png)] bg-cover bg-no-repeat z-[257]" />
-          </div>
-          <div className="flex w-[236px] justify-center items-center shrink-0 py-[22px] z-[269]">
-            <div className="w-[64px] h-[64px] shrink-0 bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-02-11/itJtaGjiw7.png)] bg-cover bg-no-repeat z-[270]" />
-          </div>
-        </div>
-
-        {/* Row 5 */}
-        <div className="flex items-center border-solid border-b border-b-light-purple-bg relative z-[243]">
-          <div className="flex flex-1 py-[36px] px-[16px] items-center">
-            <span className="font-mulish text-[20px] font-normal leading-[26px] text-text-dark text-left z-[244]">
-              A therapist licensed in your state
-            </span>
-            <div className="w-[24px] h-[24px] shrink-0 bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-02-11/kqX3z054ga.png)] bg-cover bg-no-repeat ml-2 z-[245]" />
-          </div>
-          <div className="flex w-[236px] justify-center items-center shrink-0 bg-[rgba(96,96,180,0.16)] rounded-b-[12px] py-[22px] z-[258]">
-            <div className="w-[64px] h-[64px] shrink-0 bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-02-11/uzbUasJDzg.png)] bg-cover bg-no-repeat z-[259]" />
-          </div>
-          <div className="flex w-[236px] justify-center items-center shrink-0 py-[22px] z-[271]">
-            <div className="w-[64px] h-[64px] shrink-0 bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-02-11/FnDFkwmW0d.png)] bg-cover bg-no-repeat z-[272]" />
-          </div>
+              <div className="flex w-[236px] shrink-0 items-center justify-center py-[18px] lg:py-[22px]">
+                <div
+                  className="h-[64px] w-[64px] shrink-0 bg-cover bg-no-repeat"
+                  style={{ backgroundImage: `url(${row.inPersonIcon})` }}
+                />
+              </div>
+            </div>
+          ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 }

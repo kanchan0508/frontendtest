@@ -1,197 +1,394 @@
 import React from "react";
 
+const footerColumns = [
+  {
+    title: "Services",
+    links: ["Value Gifts", "Module to EAR", "Connect to Coach", "Courses"],
+  },
+  {
+    title: "Products",
+    links: [
+      "Psychometric Assessment",
+      "Wellness Gauge",
+      "Affirmations",
+      "Sculpt the Future",
+      "Career Voyage",
+      "Sculpt the Future",
+      "Mental Wellness",
+      "Online Courses",
+      "Live - Webinars",
+      "On Premises Sessions",
+    ],
+  },
+  {
+    title: "Company",
+    links: ["About Us", "FAQs", "For Providers"],
+  },
+  {
+    title: "Support",
+    links: ["Contact Us", "Terms & Conditions", "Privacy", "Share your Feedback"],
+  },
+];
+
+const legalLinks = ["@2025 AMPL Inc.", "Terms & Conditions", "Privacy Policy", "Privacy Choices", "Privacy Notice"];
+
+const socialIcons = [
+  { icon: "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-02-26/HE3DtcjDCS.png", label: "Facebook" },
+  { icon: "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-02-26/uoYQmJvHga.png", label: "Instagram" },
+  { icon: "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-02-26/XLHtEQOemz.png", label: "X" },
+  { icon: "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-02-26/3NMBXW9OcT.png", label: "YouTube" },
+];
+
 export default function Footer({ showCTA = true }: { showCTA?: boolean }) {
+  const handlePlaceholderClick = (event?: React.SyntheticEvent) => {
+    if (event) {
+      event.preventDefault();
+    }
+  };
+
   return (
-    <>
-      <div className="flex flex-col gap-[50px] items-center self-stretch shrink-0 flex-nowrap relative z-[357]">
-        {showCTA && (
-          <div className="flex w-full max-w-[1120px] py-[50px] pr-[48px] pl-[48px] flex-col gap-[48px] justify-center items-center shrink-0 flex-nowrap bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-02-11/DzxJrb1vyM.png)] bg-cover bg-no-repeat rounded-[36px] relative overflow-hidden z-[358]">
-          <div className="flex w-full max-w-[1016px] flex-col items-center shrink-0 flex-nowrap relative z-[359]">
-            <div className="w-full max-w-[1016px] self-stretch shrink-0 font-arima text-[48px] font-medium leading-[78px] relative text-center whitespace-nowrap z-[360]">
-              <span className="heading-h2-medium leading-[78.384px] text-white relative text-center">
+    <div className="relative z-[357] mt-10 flex w-full flex-col items-center gap-[50px]">
+      {showCTA && (
+        <div className="relative z-[358] w-full">
+          <div className="mx-auto flex h-[858px] w-[342px] max-w-[calc(100vw-24px)] flex-col rounded-[24px] bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-02-11/DzxJrb1vyM.png)] bg-cover bg-center bg-no-repeat px-[48px] py-[100px] md:hidden">
+            <div className="flex h-full w-full flex-col items-center">
+              <div className="relative w-full max-w-[246px] text-left">
+                <h2 className="font-arima text-[44px] font-medium leading-[1.18] text-white">
+                  Your Growth
+                  <br />
+                  Deserves
+                  <br />
+                  Attention
+                  <br />- Not Delay
+                </h2>
+                <div className="absolute left-[84%] top-[56%] h-[18px] w-[24px] -translate-x-1/2 bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-02-11/9mpdoXTDo2.png)] bg-cover bg-no-repeat" />
+              </div>
+
+              <ul className="mt-[26px] flex w-full max-w-[246px] list-disc flex-col gap-[12px] pl-[22px] text-left marker:text-bg-main">
+                <li className="font-mulish text-[16px] font-light leading-[1.35] text-bg-main">Build clarity</li>
+                <li className="font-mulish text-[16px] font-light leading-[1.35] text-bg-main">Rise with purpose</li>
+                <li className="font-mulish text-[16px] font-light leading-[1.35] text-bg-main">Start with awareness</li>
+                <li className="font-mulish text-[16px] font-light leading-[1.35] text-bg-main">Create confidence.</li>
+                <li className="font-mulish text-[16px] font-light leading-[1.35] text-bg-main">Sustain with dignity .</li>
+              </ul>
+
+              <div className="mt-auto flex w-full justify-center">
+                <button
+                  type="button"
+                  onClick={handlePlaceholderClick}
+                  className="group flex h-[48px] w-[220px] cursor-pointer items-center justify-center rounded-[12px] border border-solid border-white transition-all hover:bg-white hover:text-footer-bg"
+                >
+                  <span className="btn-text-lg text-center leading-[11px] text-white group-hover:text-footer-bg">Explore Self</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div className="relative mx-auto hidden w-[calc(100%-24px)] max-w-[930px] flex-col items-center justify-center gap-[40px] overflow-hidden rounded-[30px] bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-02-11/DzxJrb1vyM.png)] bg-cover bg-center bg-no-repeat px-[32px] py-[72px] md:flex lg:max-w-[1180px] lg:gap-[44px] lg:rounded-[36px] lg:px-[48px] lg:py-[84px] xl:max-w-[1320px] xl:px-[56px] xl:py-[90px] 2xl:max-w-[1440px]">
+            <div className="relative flex w-full max-w-[820px] flex-col items-center gap-[20px] lg:max-w-[1024px] xl:max-w-[1120px]">
+              <h2 className="text-center font-arima text-[44px] font-medium leading-[1.18] text-white lg:text-[48px] xl:text-[52px]">
                 Your Growth Deserves{" "}
+                <span className="relative inline-block font-black">
+                  Attention
+                  <span className="absolute -right-[20px] top-[8px] h-[18px] w-[24px] bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-02-11/9mpdoXTDo2.png)] bg-cover bg-no-repeat lg:-right-[24px] lg:top-[10px] lg:h-[22px] lg:w-[30px] xl:-right-[28px] xl:top-[12px]" />
+                </span>{" "}
+                - Not Delay
+              </h2>
+
+              <div className="flex flex-col items-center gap-[12px] lg:gap-[14px]">
+                <ul className="flex flex-wrap items-center justify-center gap-x-[26px] gap-y-2 lg:gap-x-[40px]">
+                  <li className="flex items-center font-mulish text-[18px] font-light leading-[1.3] text-bg-main lg:text-[24px]">
+                    <span className="mr-2">&bull;</span>Build clarity
+                  </li>
+                  <li className="flex items-center font-mulish text-[18px] font-light leading-[1.3] text-bg-main lg:text-[24px]">
+                    <span className="mr-2">&bull;</span>Rise with purpose
+                  </li>
+                  <li className="flex items-center font-mulish text-[18px] font-light leading-[1.3] text-bg-main lg:text-[24px]">
+                    <span className="mr-2">&bull;</span>Start with awareness
+                  </li>
+                </ul>
+                <ul className="flex flex-wrap items-center justify-center gap-x-[28px] gap-y-2 lg:gap-x-[48px]">
+                  <li className="flex items-center font-mulish text-[18px] font-light leading-[1.3] text-bg-main lg:text-[24px]">
+                    <span className="mr-2">&bull;</span>Create confidence
+                  </li>
+                  <li className="flex items-center font-mulish text-[18px] font-light leading-[1.3] text-bg-main lg:text-[24px]">
+                    <span className="mr-2">&bull;</span>Sustain with dignity
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <button
+              type="button"
+              onClick={handlePlaceholderClick}
+              className="group relative z-[368] flex h-[52px] w-[236px] cursor-pointer items-center justify-center overflow-hidden rounded-[12px] border border-solid border-white transition-all hover:bg-white hover:text-footer-bg lg:h-[58px] lg:w-[270px] lg:rounded-[14px] xl:h-[60px] xl:w-[280px] xl:rounded-[16px]"
+            >
+              <span className="btn-text-lg relative z-[369] text-center text-[20px] leading-[1] text-white group-hover:text-footer-bg lg:text-[22px] xl:text-[24px]">
+                Explore Self
               </span>
-              <span className="heading-h2-black leading-[78.384px] text-white relative text-center">
-                Attention
+            </button>
+          </div>
+        </div>
+      )}
+
+      <div className="relative z-[370] w-full">
+        <div className="mx-auto w-full ">
+          <div className="flex w-full flex-col border border-solid border-[#ac46ff] bg-[#8e5593] px-[20px] pb-[28px] pt-[28px] md:px-[32px] md:pt-[34px] lg:hidden">
+            <div className="flex flex-col gap-[8px]">
+              <span className="font-arima text-[20px] font-extrabold leading-[1.2] text-white uppercase">
+                Subscribe to Our Newsletter!
               </span>
-              <span className="heading-h2-medium leading-[78.384px] text-white relative text-center">
-                {" "}
-                — Not Delay
+              <span className="font-mulish text-[14px] font-medium leading-[19.6px] text-white">
+                Get latest updates on your email by subscribing to our newsletter
+              </span>
+              <span className="font-mulish text-[12px] font-light leading-[16.8px] text-white">
+                By signing up, you&apos;re agreeing to receive marketing emails from Headspace. You can unsubscribe at
+                any time. For more details, check out our Privacy Policy.
               </span>
             </div>
-            <div className="flex w-full max-w-[918px] gap-[20px] justify-center items-start shrink-0 flex-wrap relative z-[361]">
-              <span className="h-[33px] basis-auto font-mulish text-[24px] font-light leading-[32.88px] text-bg-main tracking-[0.24px] relative text-left whitespace-nowrap z-[362]">
-                Build clarity
-              </span>
-              <span className="h-[33px] basis-auto font-mulish text-[24px] font-light leading-[32.88px] text-bg-main tracking-[0.24px] relative text-left whitespace-nowrap z-[365]">
-                Create confidence
-              </span>
-              <span className="h-[33px] basis-auto font-mulish text-[24px] font-light leading-[32.88px] text-bg-main tracking-[0.24px] relative text-left whitespace-nowrap z-[364]">
-                Start with awareness
-              </span>
-              <span className="h-[33px] basis-auto font-mulish text-[24px] font-light leading-[32.88px] text-bg-main tracking-[0.24px] relative text-left whitespace-nowrap z-[363]">
-                Rise with purpose
-              </span>
-              <span className="h-[33px] basis-auto font-mulish text-[24px] font-light leading-[32.88px] text-bg-main tracking-[0.24px] relative text-left whitespace-nowrap z-[366]">
-                Sustain with dignity
-              </span>
+
+            <form
+              className="mt-[14px] flex flex-col gap-[10px]"
+              onSubmit={(event) => {
+                event.preventDefault();
+              }}
+            >
+              <div className="flex w-full items-center rounded-[8px] border border-solid border-[#d9a1ff] bg-white px-[16px] py-[10px]">
+                <input
+                  type="email"
+                  placeholder="Enter your email address"
+                  className="w-full border-0 bg-transparent font-mulish text-[16px] font-light leading-[22px] text-[#4a5565] placeholder:text-[#4a5565] outline-none"
+                />
+              </div>
+              <button
+                type="submit"
+                className="flex h-[52px] w-full items-center justify-center rounded-[24px] border border-solid border-[#bb8dff] bg-[linear-gradient(90deg,#ac46ff_0%,#b95af9_100%)]"
+              >
+                <span className="font-arima text-[16px] font-bold leading-[1] text-white">Subscribe</span>
+              </button>
+            </form>
+
+            <div className="mt-[36px] h-px w-full bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-02-26/K3OPS2BWcv.png)] bg-cover bg-no-repeat" />
+
+            <div className="mt-[36px] flex flex-col gap-[28px]">
+              <div className="flex flex-col gap-[12px]">
+                <span className="font-arima text-[20px] font-medium leading-[1.2] text-white md:text-[24px]">Download the App</span>
+                <div className="grid grid-cols-2 gap-[8px]">
+                  <a
+                    href="#"
+                    onClick={handlePlaceholderClick}
+                    className="flex h-[48px] items-center gap-[10px] rounded-[8px] bg-[#1a1a1a] px-[10px]"
+                  >
+                    <div className="h-[24px] w-[24px] shrink-0 bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-02-26/HfNWG7SbAC.png)] bg-cover bg-no-repeat" />
+                    <div className="flex min-w-0 flex-1 flex-col justify-center">
+                      <span className="font-mulish text-[12px] font-normal leading-[15px] text-white">Download on the</span>
+                      <span className="font-arima text-[15px] font-bold leading-[18px] text-white">App Store</span>
+                    </div>
+                  </a>
+                  <a
+                    href="#"
+                    onClick={handlePlaceholderClick}
+                    className="flex h-[48px] items-center gap-[10px] rounded-[8px] bg-[#1a1a1a] px-[10px]"
+                  >
+                    <div className="h-[27px] w-[24px] shrink-0 bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-02-26/eN5pL6eYWS.png)] bg-cover bg-no-repeat" />
+                    <div className="flex min-w-0 flex-1 flex-col justify-center">
+                      <span className="font-mulish text-[12px] font-normal leading-[15px] text-white">Get it on</span>
+                      <span className="font-arima text-[15px] font-bold leading-[18px] text-white">Google Play</span>
+                    </div>
+                  </a>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-2 gap-x-[20px]">
+                <div className="flex flex-col gap-[20px]">
+                  {footerColumns
+                    .filter((column) => ["Services", "Company", "Support"].includes(column.title))
+                    .map((column) => (
+                      <div key={column.title} className="flex flex-col gap-[8px]">
+                        <span className="font-arima text-[20px] font-medium leading-[1.2] text-white md:text-[24px]">{column.title}</span>
+                        <div className="flex flex-col gap-[8px]">
+                          {column.links.map((link, index) => (
+                            <a
+                              key={`${column.title}-${link}-${index}`}
+                              href="#"
+                              onClick={handlePlaceholderClick}
+                              className="font-mulish text-[14px] font-light leading-[1.5] text-white"
+                            >
+                              {link}
+                            </a>
+                          ))}
+                        </div>
+                      </div>
+                    ))}
+                </div>
+                <div className="flex flex-col gap-[8px]">
+                  {footerColumns
+                    .filter((column) => column.title === "Products")
+                    .map((column) => (
+                      <div key={column.title} className="flex flex-col gap-[8px]">
+                        <span className="font-arima text-[20px] font-medium leading-[1.2] text-white md:text-[24px]">{column.title}</span>
+                        <div className="flex flex-col gap-[8px]">
+                          {column.links.map((link, index) => (
+                            <a
+                              key={`${column.title}-${link}-${index}`}
+                              href="#"
+                              onClick={handlePlaceholderClick}
+                              className="font-mulish text-[14px] font-light leading-[1.5] text-white"
+                            >
+                              {link}
+                            </a>
+                          ))}
+                        </div>
+                      </div>
+                    ))}
+                </div>
+              </div>
             </div>
-            <div className="w-[33.265px] h-[25.381px] shrink-0 bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-02-11/9mpdoXTDo2.png)] bg-cover bg-no-repeat absolute top-[7.054px] left-[704.141px] z-[367]" />
           </div>
-          <div className="flex w-[220px] h-[48px] pt-0 pr-[32px] pb-0 pl-[32px] gap-[4px] justify-center items-center shrink-0 flex-nowrap rounded-[12px] border-solid border border-white relative overflow-hidden cursor-pointer hover:bg-white hover:text-footer-bg transition-all group z-[368]">
-            <span className="flex w-[87px] h-[11px] justify-center items-start shrink-0 basis-auto btn-text-lg leading-[11px] text-white group-hover:text-footer-bg relative text-center whitespace-nowrap z-[369]">
-              Explore Self
-            </span>
-          </div>
-          </div>
-        )}
-        <div className="flex w-full max-w-[1360px] pt-[36px] pr-[120px] pb-0 pl-[120px] flex-col justify-end items-start shrink-0 flex-nowrap bg-footer-bg rounded-[16px] border-solid border-[0.5px] border-secondary-purple relative z-[370]">
-          <div className="flex flex-col gap-[48px] items-center self-stretch shrink-0 flex-nowrap relative z-[371]">
-            <div className="flex gap-[100px] items-start self-stretch shrink-0 flex-nowrap relative z-[372]">
-              <div className="flex w-[184px] h-[357px] flex-col gap-[24px] items-center shrink-0 flex-nowrap relative overflow-hidden z-[373]">
-                <div className="flex w-[177px] flex-col gap-[8px] items-center shrink-0 flex-nowrap relative z-[374]">
-                  <span className="h-[25px] shrink-0 basis-auto body-b1 leading-[25px] text-white relative text-left whitespace-nowrap z-[375]">
-                    Download the App
+
+          <div className="hidden w-full flex-col gap-[24px] border border-solid border-[#ac46ff] bg-[#8e5593] px-4 pb-0 pt-[36px] sm:px-6 md:px-10 lg:flex lg:px-16 xl:px-[160px]">
+            <div className="flex w-full flex-col gap-[24px] xl:flex-row xl:items-start">
+              <div className="mx-auto h-[110.001px] w-[101.342px] shrink-0 bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-02-26/opi7cFiq55.png)] bg-[length:100%_100%] bg-no-repeat xl:mx-0" />
+
+              <div className="flex min-w-0 flex-1 flex-col gap-[24px] xl:flex-row xl:items-start">
+                <div className="flex min-w-0 flex-1 flex-col gap-[8px]">
+                  <span className="font-arima text-[20px] font-extrabold leading-[32.66px] text-white uppercase">
+                    Subscribe to Our Newsletter!
                   </span>
-                  <div className="flex w-[84px] gap-[20px] items-center shrink-0 flex-nowrap relative z-[376]">
-                    <div className="w-[32px] h-[32px] shrink-0 bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-02-11/1VdRaqdssJ.png)] bg-cover bg-no-repeat relative overflow-hidden cursor-pointer hover:scale-110 transition-transform z-[377]" />
-                    <div className="w-[32px] h-[32px] shrink-0 bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-02-11/j1iqptEnXM.png)] bg-cover bg-no-repeat relative overflow-hidden cursor-pointer hover:scale-110 transition-transform z-[378]" />
+                  <div className="flex flex-col gap-[4px]">
+                    <span className="font-mulish text-[14px] font-medium leading-[19.6px] text-white">
+                      Get latest updates on your email by subscribing to our newsletter
+                    </span>
+                    <span className="font-mulish text-[12px] font-light leading-[16.8px] text-white">
+                      By signing up, you&apos;re agreeing to receive marketing emails from Headspace. You can unsubscribe
+                      at any time. For more details, check out our Privacy Policy.
+                    </span>
                   </div>
                 </div>
-                <div className="flex w-[184px] h-[398px] pt-[4px] pr-[4px] pb-[4px] pl-[4px] gap-[10px] items-center shrink-0 flex-nowrap bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-02-11/qRHnEudfdO.png)] bg-cover bg-no-repeat rounded-[24px] relative z-[379]" />
+
+                <form
+                  className="flex w-full flex-col gap-[12px] sm:flex-row sm:items-center xl:w-[547px] xl:pt-[8px]"
+                  onSubmit={(event) => {
+                    event.preventDefault();
+                  }}
+                >
+                  <div className="flex w-full pt-[8px] pr-[16px] pb-[8px] pl-[16px] items-center bg-white rounded-[8px] border border-solid border-[#d9a1ff]">
+                    <input
+                      type="email"
+                      placeholder="Enter your email address"
+                      className="w-full border-0 bg-transparent font-mulish text-[16px] font-light leading-[22px] text-[#4a5565] placeholder:text-[#4a5565] outline-none"
+                    />
+                  </div>
+                  <button type="submit" className="flex h-[38px] w-[127px] shrink-0 items-center justify-center rounded-[12px] bg-[#ac46ff]">
+                    <span className="font-arima text-[16px] font-bold leading-[19.2px] text-white">Subscribe</span>
+                  </button>
+                </form>
               </div>
-              <div className="flex flex-col gap-[48px] items-start self-stretch grow shrink-0 basis-0 flex-nowrap relative z-[380]">
-                <div className="flex gap-[16px] items-start self-stretch shrink-0 flex-nowrap relative z-[381]">
-                  <div className="flex flex-col gap-[16px] items-start grow shrink-0 basis-0 flex-nowrap relative z-[382]">
-                    <span className="h-[25px] self-stretch shrink-0 basis-auto font-mulish text-[20px] font-semibold leading-[25px] text-white relative text-left whitespace-nowrap z-[383]">
-                      Services
+            </div>
+
+            <div className="h-px w-full bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-02-26/K3OPS2BWcv.png)] bg-cover bg-no-repeat" />
+
+            <div className="flex w-full flex-col gap-[32px] ">
+              <div className="flex w-full flex-col gap-[40px] lg:flex-row lg:items-start lg:gap-[60px] xl:gap-[84px] 2xl:gap-[110px]">
+                <div className="mx-auto flex w-[188px] flex-col gap-[36px] overflow-hidden lg:mx-0 lg:h-[460px] xl:h-[470px]">
+                  <div className="flex w-[188px] flex-col gap-[24px]">
+                    <span className="w-max whitespace-nowrap font-arima text-[18px] font-extrabold leading-[32.66px] text-white uppercase md:text-[20px]">
+                      Download the App
                     </span>
-                    <div className="flex flex-col gap-[12px] items-start self-stretch shrink-0 flex-nowrap relative z-[384]">
-                      <span className="h-[18px] self-stretch shrink-0 basis-auto font-mulish text-[14px] font-normal leading-[17.57px] text-white relative text-left whitespace-nowrap cursor-pointer hover:underline z-[385]">
-                        Value Gifts
-                      </span>
-                      <span className="h-[18px] self-stretch shrink-0 basis-auto font-mulish text-[14px] font-normal leading-[17.57px] text-white relative text-left whitespace-nowrap cursor-pointer hover:underline z-[386]">
-                        Module to EAR
-                      </span>
-                      <span className="h-[18px] self-stretch shrink-0 basis-auto font-mulish text-[14px] font-normal leading-[17.57px] text-white relative text-left whitespace-nowrap cursor-pointer hover:underline z-[387]">
-                        Connect to Coach
-                      </span>
-                      <span className="h-[18px] self-stretch shrink-0 basis-auto font-mulish text-[14px] font-normal leading-[17.57px] text-white relative text-left whitespace-nowrap cursor-pointer hover:underline z-[388]">
-                        Courses
-                      </span>
+                    <div className="flex flex-col gap-[8px]">
+                      <a
+                        href="#"
+                        onClick={handlePlaceholderClick}
+                        className="flex h-[48px] w-[160px] items-center gap-[12px] rounded-[8px] bg-[#1a1a1a] px-[12px]"
+                      >
+                        <div className="h-[24px] w-[24px] shrink-0 bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-02-26/HfNWG7SbAC.png)] bg-cover bg-no-repeat" />
+                        <div className="flex min-w-0 flex-1 flex-col justify-center">
+                          <span className="font-mulish text-[12px] font-normal leading-[16.56px] text-white">Download on the</span>
+                          <span className="font-arima text-[16px] font-bold leading-[19px] text-white">App Store</span>
+                        </div>
+                      </a>
+                      <a
+                        href="#"
+                        onClick={handlePlaceholderClick}
+                        className="flex h-[48px] w-[160px] items-center gap-[12px] rounded-[8px] bg-[#1a1a1a] px-[12px]"
+                      >
+                        <div className="h-[27px] w-[24px] shrink-0 bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-02-26/eN5pL6eYWS.png)] bg-cover bg-no-repeat" />
+                        <div className="flex min-w-0 flex-1 flex-col justify-center">
+                          <span className="font-mulish text-[12px] font-normal leading-[16.56px] text-white">Get it on</span>
+                          <span className="font-arima text-[16px] font-bold leading-[19px] text-white">Google Play</span>
+                        </div>
+                      </a>
                     </div>
                   </div>
-                  <div className="flex flex-col gap-[16px] items-start grow shrink-0 basis-0 flex-nowrap relative z-[389]">
-                    <span className="h-[25px] self-stretch shrink-0 basis-auto font-mulish text-[20px] font-semibold leading-[25px] text-white relative text-left whitespace-nowrap z-[390]">
-                      Products
-                    </span>
-                    <div className="flex flex-col gap-[12px] items-start self-stretch shrink-0 flex-nowrap relative z-[391]">
-                      <span className="h-[18px] self-stretch shrink-0 basis-auto font-mulish text-[14px] font-normal leading-[17.57px] text-white relative text-left whitespace-nowrap cursor-pointer hover:underline z-[392]">
-                        Psychometric Assessment
+
+                  <div className="h-[398px] w-[184px] rounded-[24px] bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-02-26/DE1vB7Ft4E.png)] bg-cover bg-no-repeat p-[4px]" />
+                </div>
+
+                <div className="grid flex-1 grid-cols-1 gap-[32px] sm:grid-cols-2 lg:grid-cols-4 lg:gap-x-[56px] lg:pt-[2px] xl:gap-x-[72px] 2xl:gap-x-[96px]">
+                  {footerColumns.map((column) => (
+                    <div key={column.title} className="flex flex-col gap-[24px]">
+                      <span className="font-arima text-[20px] font-extrabold leading-[32.66px] text-white uppercase">
+                        {column.title}
                       </span>
-                      <span className="h-[18px] self-stretch shrink-0 basis-auto font-mulish text-[14px] font-normal leading-[17.57px] text-white relative text-left whitespace-nowrap cursor-pointer hover:underline z-[393]">
-                        Wellness Gauge
-                      </span>
-                      <span className="h-[18px] self-stretch shrink-0 basis-auto font-mulish text-[14px] font-normal leading-[17.57px] text-white relative text-left whitespace-nowrap cursor-pointer hover:underline z-[394]">
-                        Affirmations
-                      </span>
-                      <span className="h-[18px] self-stretch shrink-0 basis-auto font-mulish text-[14px] font-normal leading-[17.57px] text-white relative text-left whitespace-nowrap cursor-pointer hover:underline z-[395]">
-                        Sculpt the Future
-                      </span>
-                      <span className="h-[18px] self-stretch shrink-0 basis-auto font-mulish text-[14px] font-normal leading-[17.57px] text-white relative text-left whitespace-nowrap cursor-pointer hover:underline z-[396]">
-                        Career Voyage
-                      </span>
-                      <span className="h-[18px] self-stretch shrink-0 basis-auto font-mulish text-[14px] font-normal leading-[17.57px] text-white relative text-left whitespace-nowrap cursor-pointer hover:underline z-[397]">
-                        Sculpt the Future
-                      </span>
-                      <span className="h-[18px] self-stretch shrink-0 basis-auto font-mulish text-[14px] font-normal leading-[17.57px] text-white relative text-left whitespace-nowrap cursor-pointer hover:underline z-[398]">
-                        Mental Wellness
-                      </span>
-                      <span className="h-[18px] self-stretch shrink-0 basis-auto font-mulish text-[14px] font-normal leading-[17.57px] text-white relative text-left whitespace-nowrap cursor-pointer hover:underline z-[399]">
-                        Online Courses
-                      </span>
-                      <span className="h-[18px] self-stretch shrink-0 basis-auto font-mulish text-[14px] font-normal leading-[17.57px] text-white relative text-left whitespace-nowrap cursor-pointer hover:underline z-[400]">
-                        Live - Webinars
-                      </span>
-                      <span className="h-[18px] self-stretch shrink-0 basis-auto font-mulish text-[14px] font-normal leading-[17.57px] text-white relative text-left whitespace-nowrap cursor-pointer hover:underline z-[401]">
-                        On Premises Sessions
-                      </span>
-                    </div>
-                  </div>
-                  <div className="flex flex-col gap-[16px] items-start grow shrink-0 basis-0 flex-nowrap relative z-[402]">
-                    <span className="h-[25px] self-stretch shrink-0 basis-auto font-mulish text-[20px] font-semibold leading-[25px] text-white relative text-left whitespace-nowrap z-[403]">
-                      Company
-                    </span>
-                    <div className="flex flex-col gap-[12px] items-start self-stretch shrink-0 flex-nowrap relative z-[404]">
-                      <span className="h-[18px] self-stretch shrink-0 basis-auto font-mulish text-[14px] font-normal leading-[17.57px] text-white relative text-left whitespace-nowrap cursor-pointer hover:underline z-[405]">
-                        About Us
-                      </span>
-                      <span className="h-[18px] self-stretch shrink-0 basis-auto font-mulish text-[14px] font-normal leading-[17.57px] text-white relative text-left whitespace-nowrap cursor-pointer hover:underline z-[406]">
-                        FAQs
-                      </span>
-                      <span className="h-[18px] self-stretch shrink-0 basis-auto font-mulish text-[14px] font-normal leading-[17.57px] text-white relative text-left whitespace-nowrap cursor-pointer hover:underline z-[407]">
-                        For Providers{" "}
-                      </span>
-                    </div>
-                  </div>
-                  <div className="flex flex-col gap-[16px] items-start grow shrink-0 basis-0 flex-nowrap relative z-[408]">
-                    <span className="h-[25px] self-stretch shrink-0 basis-auto font-mulish text-[20px] font-semibold leading-[25px] text-white relative text-left whitespace-nowrap z-[409]">
-                      Support
-                    </span>
-                    <div className="flex flex-col gap-[12px] items-start self-stretch shrink-0 flex-nowrap relative z-[410]">
-                      <span className="h-[18px] self-stretch shrink-0 basis-auto font-mulish text-[14px] font-normal leading-[17.57px] text-white relative text-left whitespace-nowrap cursor-pointer hover:underline z-[411]">
-                        Contact Us
-                      </span>
-                      <span className="h-[18px] self-stretch shrink-0 basis-auto font-mulish text-[14px] font-normal leading-[17.57px] text-white relative text-left whitespace-nowrap cursor-pointer hover:underline z-[412]">
-                        Terms & Conditions
-                      </span>
-                      <span className="h-[18px] self-stretch shrink-0 basis-auto font-mulish text-[14px] font-normal leading-[17.57px] text-white relative text-left whitespace-nowrap cursor-pointer hover:underline z-[413]">
-                        Privacy
-                      </span>
-                      <span className="h-[18px] self-stretch shrink-0 basis-auto font-mulish text-[14px] font-normal leading-[17.57px] text-white relative text-left whitespace-nowrap cursor-pointer hover:underline z-[414]">
-                        Share your Feedback
-                      </span>
-                    </div>
-                    <div className="flex w-[156px] gap-[20px] items-start shrink-0 flex-nowrap relative z-[415]">
-                      <div className="flex w-[156px] gap-[20px] justify-end items-start shrink-0 flex-nowrap relative z-[416]">
-                        <div className="w-[24px] h-[24px] shrink-0 bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-02-11/CV0POzw99D.png)] bg-cover bg-no-repeat relative overflow-hidden cursor-pointer hover:scale-110 transition-transform z-[417]" />
-                        <div className="w-[24px] h-[24px] shrink-0 bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-02-11/LCaZzc5ZGa.png)] bg-cover bg-no-repeat relative overflow-hidden cursor-pointer hover:scale-110 transition-transform z-[418]" />
-                        <div className="w-[24px] h-[24px] shrink-0 bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-02-11/gWg7vKqq9r.png)] bg-cover bg-no-repeat relative overflow-hidden cursor-pointer hover:scale-110 transition-transform z-[419]" />
-                        <div className="w-[24px] h-[24px] shrink-0 bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-02-11/WZ4wOY5vfV.png)] bg-cover bg-no-repeat relative overflow-hidden cursor-pointer hover:scale-110 transition-transform z-[420]" />
+                      <div className="flex flex-col gap-[16px]">
+                        {column.links.map((link, index) => (
+                          <a
+                            key={`${column.title}-${link}-${index}`}
+                            href="#"
+                            onClick={handlePlaceholderClick}
+                            className="font-mulish text-[14px] font-light leading-[17.57px] text-white"
+                          >
+                            {link}
+                          </a>
+                        ))}
                       </div>
                     </div>
-                  </div>
+                  ))}
                 </div>
               </div>
             </div>
-            <div className="flex gap-[12px] justify-center items-center self-stretch shrink-0 flex-nowrap relative z-[421]">
-              <span className="flex w-[139px] h-[23px] justify-center items-start shrink-0 basis-auto font-mulish text-[18px] font-normal leading-[22.59px] text-white relative text-center whitespace-nowrap z-[422]">
-                https://AMPL.org
-              </span>
-              <div className="w-[8px] h-[8px] shrink-0 bg-bg-main rounded-[20px] opacity-[0.68] relative overflow-hidden z-[423]" />
-              <span className="flex w-[258px] h-[23px] justify-center items-start shrink-0 basis-auto font-mulish text-[18px] font-normal leading-[22.59px] text-white relative text-center whitespace-nowrap z-[424]">
-                Ryleigh59@Okuneva and Sons
-              </span>
-              <div className="w-[8px] h-[8px] shrink-0 bg-bg-main rounded-[20px] opacity-[0.68] relative overflow-hidden z-[425]" />
-              <span className="flex w-[185px] h-[23px] justify-center items-start shrink-0 basis-auto font-mulish text-[18px] font-normal leading-[22.59px] text-white relative text-center whitespace-nowrap z-[426]">
-                310.217.1214 x67753
-              </span>
+          </div>
+
+          <div className="flex w-full flex-col gap-[14px] bg-white px-4 py-[12px] sm:px-6 md:px-10 lg:px-16 xl:flex-row xl:items-center xl:justify-between xl:gap-[24px] xl:px-[160px]">
+            <div className="flex flex-wrap items-center justify-center gap-x-[18px] gap-y-2 xl:justify-start">
+              {legalLinks.map((link) => (
+                <a
+                  key={link}
+                  href="#"
+                  onClick={handlePlaceholderClick}
+                  className="font-mulish text-[14px] font-light leading-[17.57px] text-[#8e5593] text-center whitespace-nowrap"
+                >
+                  {link}
+                </a>
+              ))}
             </div>
-            <div className="flex h-[52.667px] gap-[911.844px] justify-center items-center self-stretch shrink-0 flex-nowrap border-solid border-b-[0.67px] border-b-white relative z-[427]">
-              <div className="flex w-[250px] gap-[10px] justify-center items-center shrink-0 flex-nowrap relative z-[428]">
-                <span className="h-[20px] shrink-0 basis-auto font-mulish text-[16px] font-normal leading-[20px] text-white relative text-left whitespace-nowrap z-[429]">
-                  © 2025 AMPL. All rights reserved.
-                </span>
+
+            <div className="flex items-center justify-center gap-[16px]">
+              <div className="flex items-center gap-[16px]">
+                {socialIcons.map((item) => (
+                  <a
+                    key={item.icon}
+                    href="#"
+                    onClick={handlePlaceholderClick}
+                    aria-label={item.label}
+                    className="h-[24px] w-[24px] shrink-0 bg-cover bg-no-repeat"
+                    style={{ backgroundImage: `url(${item.icon})` }}
+                  />
+                ))}
               </div>
+
+              <button
+                type="button"
+                onClick={handlePlaceholderClick}
+                className="flex h-[48px] items-center justify-center gap-[4px] rounded-[12px] border border-solid border-[#8e5593] pl-[24px] pr-[16px]"
+              >
+                <span className="font-arima text-[16px] font-bold leading-[11px] text-[#8e5593]">English</span>
+                <div className="h-[24px] w-[24px] bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-02-26/y8VFvJyMct.png)] bg-cover bg-no-repeat" />
+              </button>
             </div>
           </div>
         </div>
       </div>
-      <div className="w-[47.08%] h-[678px] bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-02-11/mNxVmbpwVU.png)] bg-cover bg-no-repeat absolute top-[860px] left-[78.61%] z-[4]" />
-      <div className="w-[18.68%] h-[269px] bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-02-11/NODPnMANcP.png)] bg-cover bg-no-repeat absolute top-[1399px] left-[1.25%] z-[1]" />
-      <div className="w-[22.5%] h-[324px] bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-02-11/yYUojZP1pt.png)] bg-cover bg-no-repeat absolute top-[2265px] left-[81.53%]" />
-      <div className="w-[7.71%] h-[111px] bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-02-11/Q6B9Pr9kNV.png)] bg-cover bg-no-repeat absolute top-[2505px] left-[-0.28%] z-[2]" />
-      <div className="w-[78.89%] h-[1136px] bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-02-11/y7F3MrjRGO.png)] bg-cover bg-no-repeat absolute top-[3197px] left-[-45.14%] z-[3]" />
-    </>
+    </div>
   );
 }
