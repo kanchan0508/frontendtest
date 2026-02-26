@@ -48,11 +48,11 @@ export default function Hero() {
               </div>
             </div>
             <div className="w-[4.87%] h-[65px] bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-02-11/kmcjwPGFBn.png)] bg-cover absolute top-[238px] left-[56.21%]  z-20" />
-            <div className="w-[536px] h-[473px] absolute top-[246px] left-[738px] 2xl:left-[880px] z-[16]">
+            <div className="w-[536px] h-[473px] absolute top-[246px] left-[738px] 2xl:left-[820px] z-[16]">
               <div className="w-[482px] h-[436px] bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-02-11/mEre8tygWS.png)] bg-cover absolute top-0 left-[28px] overflow-hidden z-[19]" />
               <div className="w-[536px] h-[48px] bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-02-11/ByQC9MY47T.png)] bg-[length:100%_100%] absolute top-[89.72%] left-0 z-[18]" />
             </div>
-            <div className="w-[140px] h-[259px] bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-02-11/f6NRZmAd97.png)] bg-cover absolute top-[596px] left-[1240px] 2xl:left-[1394px] z-[21]" />
+            <div className="w-[140px] h-[259px] bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-02-11/f6NRZmAd97.png)] bg-cover absolute top-[596px] left-[1240px] 2xl:left-[1320px] z-[21]" />
             <div className="w-[105px] h-[233px] bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-02-11/AUzdzouCZJ.png)] bg-cover absolute top-[615px] left-[789px] z-[22]" />
             <div className="w-[8.23%] h-[110px] bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-02-11/uhSqpPkyv6.png)] bg-cover absolute top-[730px] left-[73.58%] 2xl:left-[76%] z-[24]" />
           </div>
@@ -61,8 +61,8 @@ export default function Hero() {
           <div className="w-full h-full relative shrink-0 overflow-hidden">
             <div className="w-[1336px] h-[950px] bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-02-11/rfKbpEAOOf.png)] bg-cover absolute top-0 left-1/2 -translate-x-1/2 z-[33]" />
             <div className="w-[61.75%] h-[99.39%] bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-02-11/nYUQoMz7Vf.png)] bg-[length:100%_100%] absolute top-[0.61%] left-[38.77%] 2xl:left-[40.8%] z-[34]" />
-            <div className="w-[8.23%] h-[110px] bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-02-11/8XDrMDEj6O.png)] bg-cover absolute top-[125px] left-[92.81%] 2xl:left-[94.6%] z-[45]" />
-            <div className="w-[630px] h-[501px] absolute top-1/2 right-[34px] 2xl:right-[0px] -translate-y-1/2 z-[35]">
+            <div className="w-[8.23%] h-[110px] bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-02-11/8XDrMDEj6O.png)] bg-cover absolute top-[125px] left-[92.81%] 2xl:left-[94%] z-[45]" />
+            <div className="w-[630px] h-[501px] absolute top-1/2 right-[34px] 2xl:right-[-10px] -translate-y-1/2 z-[35]">
               <div className="w-[498px] h-[501px] absolute top-1/2 left-0 -translate-y-1/2 z-[36]">
                 <div className="w-[48.63%] h-[58.09%] bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-02-11/EXm0djFchP.png)] bg-[length:100%_100%] absolute top-[31.49%] left-[45.61%] z-[39]" />
                 <div className="w-[46.93%] h-[18.76%] bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-02-11/9WjaJsFDsA.png)] bg-[length:100%_100%] absolute top-[74.79%] left-[14.55%] z-[41]" />
@@ -96,8 +96,8 @@ export default function Hero() {
           <div className="w-full h-full relative shrink-0 overflow-hidden">
             <div className="w-[1336px] h-[950px] bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-02-11/vDRVgrD7UO.png)] bg-cover absolute top-0 left-1/2 -translate-x-1/2 z-[66]" />
             <div className="w-[61.75%] h-[99.39%] bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-02-11/gzrvYafqYe.png)] bg-[length:100%_100%] absolute top-[0.61%] left-[38.77%] 2xl:left-[40.8%] z-[67]" />
-            <div className="w-[8.23%] h-[110px] bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-02-11/CBQBywWbzZ.png)] bg-cover absolute top-[125px] left-[92.81%] 2xl:left-[97.6%] z-[79]" />
-            <div className="w-[491px] h-[537px] absolute top-1/2 left-[784px] 2xl:left-[920px] -translate-y-1/2 z-[68]">
+            <div className="w-[8.23%] h-[110px] bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-02-11/CBQBywWbzZ.png)] bg-cover absolute top-[125px] left-[92.81%] 2xl:left-[94%] z-[79]" />
+            <div className="w-[491px] h-[537px] absolute top-1/2 left-[784px] 2xl:left-[860px] -translate-y-1/2 z-[68]">
               <div className="w-[99.98%] h-[63.22%] bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-02-11/ciH2NUkAfv.png)] bg-[length:100%_100%] absolute top-0 left-[0.02%] z-[73]" />
               <div className="w-[99.32%] h-[84.29%] bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-02-11/LBMdc1TrcU.png)] bg-[length:100%_100%] absolute top-[0.01%] left-[0.35%] z-[71]" />
               <div className="w-[96.85%] h-[48.62%] bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-02-11/jDL6tyt27b.png)] bg-[length:100%_100%] absolute top-[4.86%] left-[1.58%] z-[69]" />
@@ -118,7 +118,7 @@ export default function Hero() {
               <p className="body-b1 leading-[27px] text-[#4a4a4a] z-[89]">This is growth that is scientific, soulful, and sustainable.</p>
             </div>
             <div className="w-[4.87%] h-[65px] bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-02-11/LH733Nv9xz.png)] bg-cover absolute top-[238px] left-[56.21%] z-[78]" />
-            <div className="w-[8.23%] h-[110px] bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-02-11/cGoObBgz2r.png)] bg-cover absolute top-[730px] left-[73.58%] 2xl:left-[86%] z-[80]" />
+            <div className="w-[8.23%] h-[110px] bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-02-11/cGoObBgz2r.png)] bg-cover absolute top-[730px] left-[73.58%] 2xl:left-[75.5%] z-[80]" />
           </div>
 
           {/* Desktop Slide 4 */}

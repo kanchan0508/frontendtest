@@ -19,42 +19,54 @@ export default function LoginForm({ mode }: LoginFormProps) {
   };
 
   return (
-    <div className="flex w-full max-w-[520px] h-auto min-h-[349px] pt-[44px] pr-[32px] pb-[36px] pl-[32px] flex-col gap-[44px] items-center flex-nowrap bg-[#fff] rounded-[24px] shadow-[0_25px_50px_0_rgba(152,16,250,0.09)] z-[24] relative transition-all duration-300">
-      <div className="flex flex-col gap-[48px] items-start self-stretch shrink-0 flex-nowrap relative z-[25]">
-        {/* Header */}
-        <div className="flex flex-col gap-[8px] items-start self-stretch shrink-0 flex-nowrap relative z-[26]">
-          <span className="h-[41px] self-stretch shrink-0 basis-auto font-arima text-[32px] font-medium leading-[41px] text-[#272d33] relative text-left whitespace-nowrap z-[27]">
+    <div className="relative z-[24] flex w-full max-w-[520px] flex-col items-center gap-[32px] rounded-[24px] bg-white px-5 py-8 shadow-[0_25px_50px_0_rgba(152,16,250,0.09)] sm:gap-[40px] sm:px-8 sm:py-10 md:gap-[44px] md:px-[32px] md:pt-[44px] md:pb-[36px]">
+      <div className="relative z-[25] flex w-full flex-col items-start gap-[34px] sm:gap-[40px] md:gap-[48px]">
+        <div className="relative z-[26] flex w-full flex-col items-start gap-[8px]">
+          <span className="font-arima text-[28px] font-medium leading-[1.25] text-[#272d33] sm:text-[32px] sm:leading-[41px]">
             {isLogin ? "Log In" : "Sign Up to AMPL"}
           </span>
-          <span className="h-[29px] self-stretch shrink-0 basis-auto font-mulish text-[20px] font-light leading-[29px] text-[#272d33] relative text-left whitespace-nowrap z-[28]">
+          <span className="font-mulish text-[16px] font-light leading-[1.45] text-[#272d33] sm:text-[20px] sm:leading-[29px]">
             {isLogin ? "Choose a method to log in" : "Choose a method to Sign Up"}
           </span>
         </div>
 
-        {/* Content */}
-        <div className="flex flex-col items-start self-stretch shrink-0 flex-nowrap relative z-[29]">
-          <div className="flex flex-col gap-[16px] items-start self-stretch shrink-0 flex-nowrap relative z-30">
-            <div className="flex flex-col gap-[8px] items-start self-stretch shrink-0 flex-nowrap relative z-[31]">
-              <div className="flex h-[24px] items-center self-stretch shrink-0 flex-nowrap relative z-[32]">
-                <div className="flex w-full max-w-[408px] gap-[8px] items-center shrink-0 flex-nowrap relative z-[33]">
-                  {/* Functional Checkbox for both modes */}
-                  <div 
-                    className={`w-[24px] h-[24px] rounded-[6px] border-2 flex items-center justify-center cursor-pointer transition-colors shrink-0 ${agreed ? 'bg-primary-purple border-primary-purple' : 'border-[#b95af9]'}`}
+        <div className="relative z-[29] flex w-full flex-col items-start">
+          <div className="relative z-30 flex w-full flex-col items-start gap-[16px]">
+            <div className="relative z-[31] flex w-full flex-col items-start gap-[8px]">
+              <div className="relative z-[32] flex w-full items-start sm:items-center">
+                <div className="relative z-[33] flex w-full max-w-[408px] items-start gap-[10px] sm:items-center">
+                  <button
+                    type="button"
                     onClick={() => setAgreed(!agreed)}
+                    className="relative h-[24px] w-[24px] shrink-0 rounded-[4px]"
+                    aria-label="Agree to terms"
                   >
+                    <span
+                      className={`absolute inset-0 bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-02-26/muFko92WGb.png)] bg-cover bg-no-repeat transition-opacity ${
+                        agreed ? "opacity-100" : "opacity-45"
+                      }`}
+                    />
                     {agreed && (
-                      <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                        <path d="M11.6666 3.5L5.24992 9.91667L2.33325 7" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                      </svg>
+                      <span className="absolute inset-0 flex items-center justify-center rounded-[4px] bg-[#b95af9]">
+                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                          <path
+                            d="M11.667 3.5L5.25 9.917 2.333 7"
+                            stroke="#FFFFFF"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          />
+                        </svg>
+                      </span>
                     )}
-                  </div>
-                  
-                  <div className="flex h-[32px] gap-[4px] justify-center items-center shrink-0 flex-nowrap rounded-[8px] relative overflow-hidden z-[35]">
-                    <div className="w-auto shrink-0 font-mulish text-[14px] font-medium leading-[19.6px] relative text-left whitespace-nowrap z-[36]">
-                      <span className="font-mulish text-[14px] font-medium leading-[19.6px] text-[#272d33] relative">
+                  </button>
+
+                  <div className="relative z-[35] flex min-h-[32px] items-center overflow-hidden rounded-[8px]">
+                    <div className="font-mulish text-[13px] font-medium leading-[19.6px] text-left sm:text-[14px]">
+                      <span className="text-[#272d33]">
                         {isLogin ? "By logging in, I agree to " : "By registering, I agree to "}
                       </span>
-                      <span className="font-mulish text-[14px] font-medium leading-[19.6px] text-[#b95af9] relative cursor-pointer hover:underline">
+                      <span className="cursor-pointer text-[#b95af9] hover:underline">
                         Terms and conditions
                       </span>
                     </div>
@@ -62,31 +74,32 @@ export default function LoginForm({ mode }: LoginFormProps) {
                 </div>
               </div>
             </div>
-            <div className="flex flex-col gap-[24px] items-start self-stretch shrink-0 flex-nowrap relative z-[37]">
-              <div 
-                className={`flex h-[53px] pt-0 pr-[24px] pb-0 pl-[32px] gap-[12px] justify-center items-center self-stretch shrink-0 flex-nowrap rounded-[12px] border-solid border border-[#b95af9] relative overflow-hidden cursor-pointer transition-colors z-[38] ${!agreed ? 'opacity-50 cursor-not-allowed grayscale' : 'hover:bg-[#b95af9]/5'}`}
+
+            <div className="relative z-[37] flex w-full flex-col items-start gap-[24px]">
+              <button
+                type="button"
+                className={`relative z-[38] flex h-[53px] w-full items-center justify-center gap-[12px] overflow-hidden rounded-[12px] border border-solid border-[#b95af9] pl-[32px] pr-[24px] transition-colors ${
+                  !agreed ? "cursor-not-allowed opacity-50 grayscale" : "cursor-pointer hover:bg-[#b95af9]/5"
+                }`}
                 onClick={() => {
-                  if (agreed) {
-                    navigate("/dashboard");
-                  }
+                  if (agreed) navigate("/dashboard");
                 }}
               >
-                <span className="flex w-auto h-[11px] justify-center items-start shrink-0 basis-auto font-arima text-[16px] font-bold leading-[11px] text-[#b95af9] relative text-center whitespace-nowrap z-[39]">
+                <span className="relative z-[39] text-center font-arima text-[16px] font-bold leading-[11px] whitespace-nowrap text-[#b95af9]">
                   {isLogin ? "Log in with Google" : "Sign Up using Google"}
                 </span>
-                <div className="w-[24px] h-[24px] shrink-0 bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-02-11/jExfzNHDv0.png)] bg-cover bg-no-repeat relative overflow-hidden z-40" />
-              </div>
+                <div className="relative z-40 h-[24px] w-[24px] shrink-0 overflow-hidden bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-02-26/D9DfMsbUHk.png)] bg-cover bg-no-repeat" />
+              </button>
             </div>
           </div>
 
-          {/* Footer Toggle */}
-          <div className="flex h-[53px] pt-0 pr-[32px] pb-0 pl-[32px] gap-[4px] justify-center items-center self-stretch shrink-0 flex-nowrap rounded-[12px] relative overflow-hidden z-[41]">
-            <div className="w-auto shrink-0 font-arima text-[16px] font-bold leading-[11px] relative text-center whitespace-nowrap z-[42]">
-              <span className="font-overpass text-[16px] font-bold leading-[19.2px] text-[#1a1a1a] relative text-center">
+          <div className="relative z-[41] flex min-h-[53px] w-full items-center justify-center gap-[4px] overflow-hidden rounded-[12px] px-2 sm:px-[32px]">
+            <div className="relative z-[42] text-center font-arima text-[16px] font-bold leading-[1.2]">
+              <span className="font-overpass text-[15px] font-bold leading-[19.2px] text-[#1a1a1a] sm:text-[16px]">
                 {isLogin ? "Don't have an account?" : "Already have an account?"}
               </span>
-              <span 
-                className="font-overpass text-[16px] font-bold leading-[19.2px] text-[#b95af9] relative text-center cursor-pointer hover:underline ml-1"
+              <span
+                className="ml-1 cursor-pointer font-overpass text-[15px] font-bold leading-[19.2px] text-[#b95af9] hover:underline sm:text-[16px]"
                 onClick={handleToggle}
               >
                 {isLogin ? "Sign Up" : "Log In"}

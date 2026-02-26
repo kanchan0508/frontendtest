@@ -8,7 +8,7 @@ import TeamSection from "@/components/landing-page/TeamSection";
 import ComparisonSection from "@/components/landing-page/ComparisonSection";
 import TestimonialsSection from "@/components/landing-page/TestimonialsSection";
 import FAQSection from "@/components/landing-page/FAQSection";
-import Footer from "@/components/landing-page/Footer";
+import GrowthCTASection from "@/components/landing-page/GrowthCTASection";
 
 export default function Home() {
   return (
@@ -23,7 +23,7 @@ export default function Home() {
         <ComparisonSection />
         <TestimonialsSection />
         <FAQSection />
-        <Footer />
+        <GrowthCTASection />
       </div>
       <div className="w-[47.08%] h-[678px] bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-02-11/mNxVmbpwVU.png)] bg-cover bg-no-repeat absolute top-[860px] left-[78.61%] z-[4]" />
       <div className="w-[47.08%] h-[678px] bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-02-11/mNxVmbpwVU.png)] bg-cover bg-no-repeat absolute top-[860px] left-[78.61%] z-[4]" />

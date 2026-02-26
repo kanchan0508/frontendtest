@@ -1,16 +1,8 @@
 import React from "react";
-import { useLocation } from "react-router-dom";
 import TopBar from "@/components/layout/TopBar";
 import Navbar from "@/components/layout/Navbar";
 
 export default function GlobalHeader() {
-  const location = useLocation();
-
-  // Hide header on dashboard pages
-  if (location.pathname.startsWith("/dashboard")) {
-    return null;
-  }
-
   return (
     <div className="sticky top-0 z-[1000] w-full bg-white shadow-none border-b border-[#f0f0f0]">
       <TopBar />
