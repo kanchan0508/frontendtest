@@ -10,7 +10,7 @@ import TestimonialsSection from "@/components/landing-page/TestimonialsSection";
 import FAQSection from "@/components/landing-page/FAQSection";
 import GrowthCTASection from "@/components/landing-page/GrowthCTASection";
 
-export default function Home() {
+export default function HomePage() {
   return (
     <div className="main-container w-full  bg-[#f7f9fc] relative overflow-x-hidden mx-auto my-0">
       <div className="flex w-full  pt-0 flex-col items-center flex-nowrap relative z-[5]">

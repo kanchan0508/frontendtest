@@ -2,7 +2,7 @@ import React from "react";
 import AuthPageShell from "@/components/auth/AuthPageShell";
 import LoginForm from "@/components/auth/LoginForm";
 
-export default function Login() {
+export default function LoginPage() {
   return (
     <AuthPageShell>
       <LoginForm mode="login" />
