@@ -91,7 +91,7 @@ export default function CreateProfileStepTwoPage() {
           </div>
 
           <div className="flex w-full flex-col items-center gap-1 text-center">
-            <h1 className="font-arima text-[34px] font-black leading-[1.25] text-[#0a0a0a] sm:text-[42px] lg:text-[48px]">
+            <h1 className="font-arima text-[24px] font-black leading-[1.25] text-[#0a0a0a] sm:text-[42px] lg:text-[48px]">
               Let&apos;s Capture Your Current Feeling
             </h1>
             <p className="font-mulish text-[16px] font-light leading-[1.4] text-[#4a4a4a] sm:text-[20px]">
@@ -99,7 +99,7 @@ export default function CreateProfileStepTwoPage() {
             </p>
           </div>
 
-          <div className="flex w-full flex-col gap-8 px-0 sm:px-4 lg:px-11">
+          <div className="flex w-full flex-col gap-8 px-0 sm:px-4 lg:px-11 ">
             <QuestionGroup
               index={1}
               title="How are you currently feeling?"
@@ -163,7 +163,7 @@ function QuestionGroup({ index, title, options, selected, onToggle }: QuestionGr
               key={option}
               type="button"
               onClick={() => onToggle(option)}
-              className={`h-8 rounded-[36px] px-4 font-arima text-[16px] font-normal leading-[1] transition-colors ${
+              className={`h-8 rounded-[36px] border border-[#d9a1ff] px-4 font-arima text-[16px] font-normal leading-[1] transition-colors sm:border-0 ${
                 isSelected ? "bg-[rgba(162,59,206,0.2)] text-[#1a1a1a]" : "bg-transparent text-[#1a1a1a] hover:bg-[#f2ebfa]"
               }`}
             >

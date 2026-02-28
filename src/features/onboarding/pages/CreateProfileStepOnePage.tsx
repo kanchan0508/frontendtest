@@ -117,7 +117,7 @@ export default function CreateProfileStepOnePage() {
         </div>
 
         <div className="flex w-full flex-col items-center gap-1 text-center">
-          <h1 className="font-arima text-[34px] font-black leading-[1.25] text-[#0a0a0a] sm:text-[42px] lg:text-[48px]">
+          <h1 className="font-arima text-[26px] font-black leading-[1.25] text-[#0a0a0a] sm:text-[20px] lg:text-[48px]">
             Let&apos;s Set Up Your Profile
           </h1>
           <p className="font-mulish text-[16px] font-light leading-[1.4] text-[#4a4a4a] sm:text-[20px]">

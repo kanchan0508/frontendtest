@@ -34,8 +34,9 @@ export function DashboardContentPage({ title }: DashboardContentPageProps) {
           profileIncomplete={profileIncomplete}
           onFirstCardStart={() => navigate(ROUTES.deepBreathing)}
           onSecondCardStart={() => navigate(ROUTES.chakraMeditation)}
+          onCompleteProfile={() => navigate(ROUTES.profile)}
         />
-        <RecommendationsSection />
+        <RecommendationsSection profileIncomplete={profileIncomplete} />
       </div>
     </DashboardSectionLayout>
   );
@@ -49,16 +50,50 @@ function CuratedSection({
   profileIncomplete,
   onFirstCardStart,
   onSecondCardStart,
+  onCompleteProfile,
 }: {
   profileIncomplete: boolean;
   onFirstCardStart: () => void;
   onSecondCardStart: () => void;
+  onCompleteProfile: () => void;
 }) {
   if (profileIncomplete) {
     return (
       <section className="w-full">
         <div className="flex w-full max-w-[1240px] 2xl:max-w-[1700px] flex-col gap-[24px] items-start relative mx-auto">
-          <div className="flex flex-col gap-[16px] items-start self-stretch shrink-0 w-full">
+          <div className="sm:hidden w-full flex flex-col gap-4">
+            <MobileProfilePrompt onClick={onCompleteProfile} />
+            <div className="flex flex-col gap-[16px]">
+              <SectionHeader title="Curated for You" />
+              <div className="flex gap-3 overflow-x-auto pb-2">
+                <CuratedCard
+                  bg="bg-[#bddce6]"
+                  badgeBg="bg-[#025b65]"
+                  badgeText="Intermediate"
+                  titleColor="text-[#025b65]"
+                  title="Chakra Meditation"
+                  duration="10 min"
+                  buttonTextColor="text-[#025b65]"
+                  imageUrl="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-02-26/meBoihhiUf.png"
+                  imageSize="w-[229.934px] h-[167.307px]"
+                  onGetStarted={onSecondCardStart}
+                />
+                <CuratedCard
+                  bg="bg-[#bddce6]"
+                  badgeBg="bg-[#025b65]"
+                  badgeText="Intermediate"
+                  titleColor="text-[#025b65]"
+                  title="Chakra Meditation"
+                  duration="10 min"
+                  buttonTextColor="text-[#025b65]"
+                  imageUrl="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-02-26/meBoihhiUf.png"
+                  imageSize="w-[229.934px] h-[167.307px]"
+                  onGetStarted={onSecondCardStart}
+                />
+              </div>
+            </div>
+          </div>
+          <div className="hidden sm:flex flex-col gap-[16px] items-start self-stretch shrink-0 w-full">
             <SectionHeader title="Curated for You" />
 
             <div className="grid w-full grid-cols-1 gap-4 xl:grid-cols-[minmax(0,1fr)_minmax(0,1fr)_236px]">
@@ -88,7 +123,7 @@ function CuratedSection({
                 imageSize="w-[229.934px] h-[167.307px]"
                 onGetStarted={onSecondCardStart}
               />
-              <ProfileCompletionCard />
+              <ProfileCompletionCard onClick={onCompleteProfile} />
             </div>
           </div>
         </div>
@@ -165,7 +200,7 @@ function CuratedCard({
   const layoutClass =
     layout === "grid"
       ? "w-full"
-      : "min-w-[320px] md:min-w-0 grow shrink-0 basis-0";
+      : "min-w-[310px] md:min-w-0 grow shrink-0 basis-0";
 
   return (
     <div
@@ -272,9 +307,13 @@ function SoundBathCard() {
   );
 }
 
-function ProfileCompletionCard() {
+function ProfileCompletionCard({ onClick }: { onClick: () => void }) {
   return (
-    <div className="h-[282px] w-full rounded-[12px] border border-[#eaecf0] bg-[#f5f6fa] p-4">
+    <button
+      type="button"
+      onClick={onClick}
+      className="h-[282px] w-full rounded-[12px] border border-[#eaecf0] bg-[#f5f6fa] p-4 text-left"
+    >
       <div className="flex h-full flex-col items-center justify-between">
         <h3 className="w-full text-left font-mulish text-[24px] font-normal leading-[1.2] text-[#1a1a1a]">
           Complete your profile
@@ -292,7 +331,7 @@ function ProfileCompletionCard() {
           <CompletionRow icon="cross" label="Account Setup" value="20%" />
         </div>
       </div>
-    </div>
+    </button>
   );
 }
 
@@ -324,20 +363,86 @@ function CompletionRow({
 /*  Recommendations                                                   */
 /* ------------------------------------------------------------------ */
 
-function RecommendationsSection() {
+function RecommendationsSection({ profileIncomplete = false }: { profileIncomplete?: boolean }) {
+  if (profileIncomplete) {
+    return (
+      <section className="w-full mb-20">
+        <div className="flex w-full max-w-[1240px] 2xl:max-w-[1700px] flex-col gap-[24px] items-start relative mx-auto">
+          <div className="sm:hidden w-full flex flex-col gap-[16px]">
+            <div className="flex justify-between items-center self-stretch shrink-0 rounded-[12px] relative">
+              <span className="h-[33px] shrink-0 basis-auto font-['Arima_Madurai'] text-[20px] font-bold leading-[32.66px] text-[#1a1a1a] relative text-left whitespace-nowrap z-[1]">
+                Recommendations
+              </span>
+              <span className="h-[33px] shrink-0 basis-auto font-['Arima_Madurai'] text-[20px] font-bold leading-[32.66px] text-[#b95af9] relative text-left whitespace-nowrap z-[2]">
+                See all
+              </span>
+            </div>
+
+            <div className="flex w-full flex-col gap-[16px] justify-center items-start shrink-0 flex-nowrap relative z-[3]">
+              <MobileRecommendationCard imageUrl="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-02-28/mK6V2hVHYN.png" />
+              <MobileRecommendationCard imageUrl="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-02-28/K6Y8D8Roa9.png" />
+            </div>
+          </div>
+
+          <div className="hidden sm:flex flex-col justify-between items-start self-stretch shrink-0 w-full h-auto gap-4">
+            <SectionHeader title="Recommendations" />
+            <div className="flex gap-[16px] self-stretch shrink-0 flex-col sm:flex-row h-auto">
+              <RecommendationStressCard />
+              <RecommendationAnxietyCard />
+            </div>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
   return (
     <section className="w-full mb-20">
       <div className="flex w-full max-w-[1240px] 2xl:max-w-[1700px] flex-col gap-[24px] items-start relative mx-auto">
-        <div className="flex h-[306px] flex-col justify-between items-start self-stretch shrink-0 w-full">
+        <div className="flex flex-col justify-between items-start self-stretch shrink-0 w-full h-[306px]">
           <SectionHeader title="Recommendations" />
 
-          <div className="flex h-[256px] gap-[16px] items-center self-stretch shrink-0">
+          <div className="flex gap-[16px] self-stretch shrink-0 h-[256px] items-center">
             <RecommendationStressCard />
             <RecommendationAnxietyCard />
           </div>
         </div>
       </div>
     </section>
+  );
+}
+
+function MobileRecommendationCard({ imageUrl }: { imageUrl: string }) {
+  return (
+    <div className="flex w-full pt-[20px] pr-[16px] pb-[20px] pl-[16px] gap-[10px] items-end shrink-0 flex-nowrap bg-[#afbe8d] rounded-[20px] relative overflow-hidden">
+      <div className="flex flex-col gap-[17px] justify-center items-start grow shrink-0 basis-0 flex-nowrap relative">
+        <div className="flex flex-col items-start self-stretch shrink-0 flex-nowrap relative">
+          <div className="flex w-[76px] h-[16px] pt-[4px] pr-[10px] pb-[4px] pl-[10px] gap-[10px] justify-center items-center shrink-0 flex-nowrap bg-[#687a40] rounded-[8px] relative">
+            <span className="h-[15px] shrink-0 basis-auto font-['Inter'] text-[12px] font-normal leading-[14.523px] text-[#fff] relative text-left whitespace-nowrap">
+              Soft Skills
+            </span>
+          </div>
+          <span className="h-[39px] self-stretch shrink-0 basis-auto font-['Arima_Madurai'] text-[24px] font-extrabold leading-[39px] text-[#1a1a1a] relative text-left whitespace-nowrap">
+            Anxiety
+          </span>
+          <span className="flex w-[150px] h-[60px] justify-start items-center self-stretch shrink-0 font-['Mulish'] text-[12px] font-normal leading-[15.06px] text-[#4a4a4a] relative text-left">
+            Engage with yourself. Reflect, resonate, and discover your real, unique, and awesome self.
+          </span>
+        </div>
+        <button
+          type="button"
+          className="flex w-[133px] pt-[12px] pr-[32px] pb-[12px] pl-[32px] gap-[4px] justify-center items-center shrink-0 flex-nowrap rounded-[12px] border-solid border border-[#4a4a4a] relative overflow-hidden"
+        >
+          <span className="flex w-[69px] h-[11px] justify-center items-start shrink-0 basis-auto font-['Arima_Madurai'] text-[16px] font-bold leading-[11px] text-[#4a4a4a] relative text-center whitespace-nowrap">
+            Take Test
+          </span>
+        </button>
+      </div>
+      <div
+        className="w-[150px] h-[145.654px] shrink-0 bg-[length:100%_100%] bg-no-repeat relative"
+        style={{ backgroundImage: `url(${imageUrl})` }}
+      />
+    </div>
   );
 }
 
@@ -414,15 +519,32 @@ function SectionHeader({ title }: { title: string }) {
   return (
     <div className="flex justify-between items-center self-stretch shrink-0 rounded-[12px]">
       <div className="flex gap-[10px] justify-center items-center shrink-0">
-        <span className="font-arima text-[24px] font-black leading-[39px] text-[#1a1a1a] whitespace-nowrap">
+        <span className="font-arima text-[20px] sm:text-[24px] font-black leading-[32.66px] sm:leading-[39px] text-[#1a1a1a] whitespace-nowrap">
           {title}
         </span>
       </div>
       <button className="flex gap-[10px] justify-center items-center shrink-0">
-        <span className="font-mulish text-[18px] font-bold leading-[22.59px] text-[#b95af9] whitespace-nowrap">
+        <span className="font-mulish text-[18px] sm:text-[18px] font-bold leading-[22.59px] text-[#b95af9] whitespace-nowrap">
           See all
         </span>
       </button>
     </div>
+  );
+}
+
+function MobileProfilePrompt({ onClick }: { onClick: () => void }) {
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      className="w-full rounded-[12px] bg-[#f4f4f4] p-4 text-left"
+    >
+      <span className="font-arima text-[14px] font-bold text-[#101727]">
+        Complete your profile!
+      </span>
+      <p className="mt-1 font-mulish text-[10px] leading-[12.55px] text-[#1a1a1a]">
+        Your profile is only 60% completed. Click here to complete your profile now!
+      </p>
+    </button>
   );
 }

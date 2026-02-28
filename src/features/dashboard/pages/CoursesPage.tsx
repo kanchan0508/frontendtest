@@ -1,3 +1,6 @@
+import { Link } from "react-router-dom";
+import { getCourseDetailsRoute, getCoursePaymentStepOneRoute } from "@/app/routes/paths";
+import { COURSE_CARDS } from "../data/courses";
 import DashboardSectionLayout from "../components/DashboardSectionLayout";
 
 function formatDate(): string {
@@ -16,53 +19,6 @@ function formatDate(): string {
   return `${weekday}, ${day} ${month} ${year}`;
 }
 
-const COURSE_CARDS = [
-  {
-    key: "course-1",
-    icon: "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-02-27/Jx1bt6gst1.png",
-    seatsIcon:
-      "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-02-27/gD6cdrnUBN.png",
-    avatars: [
-      "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-02-27/O6x3oaHXqn.png",
-      "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-02-27/SnbR4CVArS.png",
-      "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-02-27/a1w7NEQDFn.png",
-    ],
-  },
-  {
-    key: "course-2",
-    icon: "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-02-27/TBug7hzTN6.png",
-    seatsIcon:
-      "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-02-27/boPJfTbP5H.png",
-    avatars: [
-      "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-02-27/JVyjc7vLxA.png",
-      "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-02-27/8OONNTOAfQ.png",
-      "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-02-27/mE3EmNbKnQ.png",
-    ],
-  },
-  {
-    key: "course-3",
-    icon: "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-02-27/VErCgTNa5A.png",
-    seatsIcon:
-      "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-02-27/gPqHXXgo0C.png",
-    avatars: [
-      "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-02-27/fR8GxmqHQg.png",
-      "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-02-27/rbkTu3E0oL.png",
-      "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-02-27/t6FV19QJSB.png",
-    ],
-  },
-  {
-    key: "course-4",
-    icon: "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-02-27/rC97WM7EEO.png",
-    seatsIcon:
-      "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-02-27/zoWzxx0wr3.png",
-    avatars: [
-      "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-02-27/5uoZ6SgoTt.png",
-      "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-02-27/qp5Yfx8tSF.png",
-      "https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-02-27/BZJvrR1xbz.png",
-    ],
-  },
-] as const;
-
 export default function CoursesPage() {
   return (
     <DashboardSectionLayout title="Courses" subtitle={formatDate()}>
@@ -77,9 +33,15 @@ export default function CoursesPage() {
               </h2>
             </div>
 
-            <div className="grid grid-cols-1 gap-4 xl:grid-cols-2 2xl:gap-6">
-              {COURSE_CARDS.map(({ key, ...course }) => (
-                <CourseCard key={key} {...course} />
+            <div className="sm:hidden grid grid-cols-1 gap-3">
+              {COURSE_CARDS.map((course) => (
+                <MobileCourseCard key={course.id} {...course} />
+              ))}
+            </div>
+
+            <div className="hidden sm:grid grid-cols-1 gap-4 xl:grid-cols-2 2xl:gap-6">
+              {COURSE_CARDS.map((course) => (
+                <CourseCard key={course.id} {...course} />
               ))}
             </div>
           </section>
@@ -89,51 +51,166 @@ export default function CoursesPage() {
   );
 }
 
+function MobileCourseCard({
+  id,
+  title,
+  shortDescription,
+  icon,
+  seatsIcon,
+  avatars,
+  seatsLabel,
+  badgeLabel,
+}: {
+  id: string;
+  title: string;
+  shortDescription: string;
+  icon: string;
+  seatsIcon: string;
+  avatars: string[];
+  seatsLabel: string;
+  badgeLabel: string;
+}) {
+  return (
+    <article className="relative overflow-hidden rounded-[16px] border border-[#f1d1fe] bg-white p-4">
+      <div className="absolute right-0 top-0 flex h-[26px] min-w-[108px] items-center justify-center rounded-bl-[16px] bg-[#ece4ff] px-3">
+        <span className="font-mulish text-[11px] font-bold leading-[14px] text-[#ac46ff]">
+          {badgeLabel}
+        </span>
+      </div>
+
+      <div className="flex flex-col gap-4">
+        <div className="flex h-10 w-10 items-center justify-center rounded-[12px] bg-[#f4e5ff]">
+          <span
+            className="h-5 w-5 bg-cover bg-no-repeat"
+            style={{ backgroundImage: `url(${icon})` }}
+          />
+        </div>
+
+        <div className="flex flex-col gap-2">
+          <h3 className="font-arima text-[18px] font-bold leading-[24px] text-[#1a1a1a]">
+            {title}
+          </h3>
+          <p className="font-mulish text-[13px] font-normal leading-[18px] text-[#4a4a4a]">
+            {shortDescription}
+          </p>
+        </div>
+
+        <div className="flex items-center justify-between gap-2">
+          <div className="flex items-center gap-2">
+            <span
+              className="h-5 w-5 bg-cover bg-no-repeat"
+              style={{ backgroundImage: `url(${seatsIcon})` }}
+            />
+            <span className="font-mulish text-[12px] text-[#4a4a4a]">
+              {seatsLabel}
+            </span>
+          </div>
+
+          <div className="flex -space-x-3">
+            {avatars.slice(0, 3).map((avatar) => (
+              <span
+                key={avatar}
+                className="h-8 w-8 rounded-full bg-cover bg-no-repeat ring-2 ring-white"
+                style={{ backgroundImage: `url(${avatar})` }}
+              />
+            ))}
+            <span className="z-[1] flex h-8 w-8 items-center justify-center rounded-full bg-[#4e8fa7] font-mulish text-[11px] font-bold text-white ring-2 ring-white">
+              20+
+            </span>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-2 gap-2">
+          <Link
+            to={getCourseDetailsRoute(id)}
+            className="flex h-[42px] items-center justify-center rounded-[10px] border border-[#b95af9] font-arima text-[14px] font-bold text-[#b95af9]"
+          >
+            Check Details
+          </Link>
+          <Link
+            to={getCoursePaymentStepOneRoute(id)}
+            className="flex h-[42px] items-center justify-center rounded-[10px] bg-[#b95af9] font-arima text-[14px] font-bold text-white"
+          >
+            Book Now
+          </Link>
+        </div>
+      </div>
+    </article>
+  );
+}
+
 function LiveSessionHero() {
   return (
-    <section className="relative min-h-[320px] w-full overflow-hidden rounded-[20px] bg-[#cda4d0] sm:min-h-[360px] lg:min-h-[391px]">
-      <div className="absolute left-0 top-[11%] z-[1] h-[79%] w-[58.5%] bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-02-27/56T0Dvu3nn.png)] bg-cover bg-no-repeat" />
-
-      <div className="relative z-[2] flex h-full w-full flex-col justify-center gap-8 px-5 py-20 sm:px-8 lg:px-[64px]">
-        <div className="flex w-full max-w-[460px] flex-col gap-6">
-          <div className="flex flex-col gap-3">
-            <h2 className="heading-h5-bold uppercase text-white">
+    <>
+      <section className="sm:hidden relative w-full max-w-[346px] h-[134px] overflow-hidden rounded-[12px] bg-[#cda4d0] mx-auto">
+        <div className="absolute inset-0 bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-02-27/56T0Dvu3nn.png)] bg-cover bg-no-repeat opacity-70" />
+        <div className="relative z-[2] flex h-full w-full flex-col justify-between p-[16px]">
+          <div className="flex flex-col gap-[4px]">
+            <h2 className="font-arima text-[14px] font-bold leading-[19.596px] uppercase text-white">
               Join the Live Session
             </h2>
-            <p className="body-b1 text-[18px] font-normal leading-[1.35] text-white sm:text-[20px]">
-              A safe, guided space to learn, reflect, and grow - live with an
-              expert.
+            <p className="font-mulish text-[10px] font-normal leading-[12.55px] text-white">
+              A safe, guided space to learn, reflect, and grow - live with an expert.
             </p>
           </div>
-          <button className="btn-text-lg flex h-[48px] w-[154px] items-center justify-center rounded-[12px] border border-[#ffcc70] bg-[#ffa500] text-white shadow-[0_2px_6px_0_#ffffff_inset]">
+          <button className="flex h-[32px] w-[96px] items-center justify-center rounded-[10px] border border-[#ffcc70] bg-[#ffa500] text-white font-mulish text-[12px] font-bold leading-[15px] shadow-[0_2px_6px_0_#ffffff_inset]">
             Join Now
           </button>
         </div>
-      </div>
+      </section>
 
-      <div className="absolute right-[-6%] top-[-37%] z-[3] hidden h-[94%] w-[42.2%] bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-02-27/zGJX1Sm6H0.png)] bg-cover bg-no-repeat md:block" />
-      <div className="absolute right-[5%] top-[2%] z-[4] hidden h-[104%] w-[40.1%] bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-02-27/VDZ6rkvgXy.png)] bg-cover bg-no-repeat md:block" />
-      <div className="absolute right-[-16%] top-[30%] z-[5] hidden h-[77.4%] w-[34.8%] bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-02-27/E4iwzf3xt9.png)] bg-cover bg-no-repeat lg:block" />
-      <div className="absolute right-[11%] top-[41%] z-[6] hidden h-[100.5%] w-[43%] bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-02-27/7PGqNgPp78.png)] bg-cover bg-no-repeat lg:block" />
-    </section>
+      <section className="hidden sm:block relative min-h-[320px] w-full overflow-hidden rounded-[20px] bg-[#cda4d0] sm:min-h-[360px] lg:min-h-[391px]">
+        <div className="absolute left-0 top-[11%] z-[1] h-[79%] w-[58.5%] bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-02-27/56T0Dvu3nn.png)] bg-cover bg-no-repeat" />
+
+        <div className="relative z-[2] flex h-full w-full flex-col justify-center gap-8 px-5 py-20 sm:px-8 lg:px-[64px]">
+          <div className="flex w-full max-w-[460px] flex-col gap-6">
+            <div className="flex flex-col gap-3">
+              <h2 className="heading-h5-bold uppercase text-white">
+                Join the Live Session
+              </h2>
+              <p className="body-b1 text-[18px] font-normal leading-[1.35] text-white sm:text-[20px]">
+                A safe, guided space to learn, reflect, and grow - live with an
+                expert.
+              </p>
+            </div>
+            <button className="btn-text-lg flex h-[48px] w-[154px] items-center justify-center rounded-[12px] border border-[#ffcc70] bg-[#ffa500] text-white shadow-[0_2px_6px_0_#ffffff_inset]">
+              Join Now
+            </button>
+          </div>
+        </div>
+
+        <div className="absolute right-[-6%] top-[-37%] z-[3] hidden h-[94%] w-[42.2%] bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-02-27/zGJX1Sm6H0.png)] bg-cover bg-no-repeat md:block" />
+        <div className="absolute right-[5%] top-[2%] z-[4] hidden h-[104%] w-[40.1%] bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-02-27/VDZ6rkvgXy.png)] bg-cover bg-no-repeat md:block" />
+        <div className="absolute right-[-16%] top-[30%] z-[5] hidden h-[77.4%] w-[34.8%] bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-02-27/E4iwzf3xt9.png)] bg-cover bg-no-repeat lg:block" />
+        <div className="absolute right-[11%] top-[41%] z-[6] hidden h-[100.5%] w-[43%] bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-02-27/7PGqNgPp78.png)] bg-cover bg-no-repeat lg:block" />
+      </section>
+    </>
   );
 }
 
 function CourseCard({
+  id,
+  title,
+  shortDescription,
   icon,
   seatsIcon,
   avatars,
+  seatsLabel,
+  badgeLabel,
 }: {
+  id: string;
+  title: string;
+  shortDescription: string;
   icon: string;
   seatsIcon: string;
-  avatars: readonly string[];
+  avatars: string[];
+  seatsLabel: string;
+  badgeLabel: string;
 }) {
   return (
     <article className="relative overflow-hidden rounded-[20px] border border-[#f1d1fe] bg-white p-5 pb-4">
       <div className="absolute right-0 top-0 flex h-[31px] w-[132px] items-center justify-center rounded-bl-[20px] bg-[#ece4ff]">
-        <span className="caption-text font-bold text-[#ac46ff]">
-          Beginner Friendly
-        </span>
+        <span className="caption-text font-bold text-[#ac46ff]">{badgeLabel}</span>
       </div>
 
       <div className="flex flex-col gap-6">
@@ -146,12 +223,9 @@ function CourseCard({
 
         <div className="flex flex-col gap-3">
           <div className="flex flex-col gap-2">
-            <h3 className="subheading-medium font-bold text-[#1a1a1a]">
-              Stress Management
-            </h3>
+            <h3 className="subheading-medium font-bold text-[#1a1a1a]">{title}</h3>
             <p className="body-b2 text-[16px] font-light leading-[1.45] text-[#4a4a4a]">
-              Keep improving the quality of your health keep improving the
-              quality of your health
+              {shortDescription}
             </p>
           </div>
 
@@ -161,7 +235,7 @@ function CourseCard({
                 className="h-6 w-6 bg-cover bg-no-repeat"
                 style={{ backgroundImage: `url(${seatsIcon})` }}
               />
-              <span className="body-b2 text-[#4a4a4a]">12/40 Seats Filled</span>
+              <span className="body-b2 text-[#4a4a4a]">{seatsLabel}</span>
             </div>
 
             <div className="flex -space-x-[19px]">
@@ -179,12 +253,18 @@ function CourseCard({
           </div>
 
           <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
-            <button className="btn-text-lg flex h-[48px] items-center justify-center rounded-[12px] border border-[#b95af9] text-[#b95af9]">
+            <Link
+              to={getCourseDetailsRoute(id)}
+              className="btn-text-lg flex h-[48px] items-center justify-center rounded-[12px] border border-[#b95af9] text-[#b95af9]"
+            >
               Check Details
-            </button>
-            <button className="btn-text-lg flex h-[48px] items-center justify-center rounded-[12px] bg-[#b95af9] text-white">
+            </Link>
+            <Link
+              to={getCoursePaymentStepOneRoute(id)}
+              className="btn-text-lg flex h-[48px] items-center justify-center rounded-[12px] bg-[#b95af9] text-white"
+            >
               Book Now
-            </button>
+            </Link>
           </div>
         </div>
       </div>

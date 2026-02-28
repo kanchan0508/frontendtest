@@ -11,8 +11,10 @@ import ValueGiftsPage from "@/features/value-gifts/pages/ValueGiftsPage";
 import ModuleToEarPage from "@/features/dashboard/pages/ModuleToEarPage";
 import ConnectToCoachPage from "@/features/dashboard/pages/ConnectToCoachPage";
 import CoursesPage from "@/features/dashboard/pages/CoursesPage";
+import CourseDetailsPage from "@/features/dashboard/pages/CourseDetailsPage";
 import ProgressPage from "@/features/dashboard/pages/ProgressPage";
 import ReportsPage from "@/features/dashboard/pages/ReportsPage";
+import PostPurchaseDashboardPage from "@/features/dashboard/pages/PostPurchaseDashboardPage";
 import DeepBreathingPage from "@/features/wellness/pages/DeepBreathingPage";
 import ChakraMeditationPage from "@/features/wellness/pages/ChakraMeditationPage";
 import CreateProfileStepOnePage from "@/features/onboarding/pages/CreateProfileStepOnePage";
@@ -24,6 +26,10 @@ import ProfilePlansPage from "@/features/profile/pages/ProfilePlansPage";
 import ApplicationsPage from "@/features/applications/pages/ApplicationsPage";
 import ApplicationDetailsPage from "@/features/applications/pages/ApplicationDetailsPage";
 import ContractAgreementPage from "@/features/applications/pages/ContractAgreementPage";
+import CoursePaymentReviewPage from "@/features/dashboard/courses-payment/pages/CoursePaymentReviewPage";
+import CoursePaymentSchedulePage from "@/features/dashboard/courses-payment/pages/CoursePaymentSchedulePage";
+import CoursePaymentSessionPage from "@/features/dashboard/courses-payment/pages/CoursePaymentSessionPage";
+import CoursePaymentCheckoutPage from "@/features/dashboard/courses-payment/pages/CoursePaymentCheckoutPage";
 import {
   hasCompletedProfileStepOne,
   hasCompletedProfileStepTwo,
@@ -158,6 +164,46 @@ export default function App() {
           </RequireFullOnboarding>
         }
       />
+      <Route
+        path={ROUTES.courseDetails}
+        element={
+          <RequireFullOnboarding>
+            <CourseDetailsPage />
+          </RequireFullOnboarding>
+        }
+      />
+      <Route
+        path={ROUTES.coursePaymentStepOne}
+        element={
+          <RequireFullOnboarding>
+            <CoursePaymentReviewPage />
+          </RequireFullOnboarding>
+        }
+      />
+      <Route
+        path={ROUTES.coursePaymentStepTwo}
+        element={
+          <RequireFullOnboarding>
+            <CoursePaymentSchedulePage />
+          </RequireFullOnboarding>
+        }
+      />
+      <Route
+        path={ROUTES.coursePaymentStepThree}
+        element={
+          <RequireFullOnboarding>
+            <CoursePaymentSessionPage />
+          </RequireFullOnboarding>
+        }
+      />
+      <Route
+        path={ROUTES.coursePaymentStepFour}
+        element={
+          <RequireFullOnboarding>
+            <CoursePaymentCheckoutPage />
+          </RequireFullOnboarding>
+        }
+      />
 
       <Route path={ROUTES.dashboard} element={<DashboardLayout />}>
         <Route
@@ -213,6 +259,14 @@ export default function App() {
           element={
             <RequireFullOnboarding>
               <ReportsPage />
+            </RequireFullOnboarding>
+          }
+        />
+        <Route
+          path="post-purchase"
+          element={
+            <RequireFullOnboarding>
+              <PostPurchaseDashboardPage />
             </RequireFullOnboarding>
           }
         />

@@ -2,29 +2,57 @@ import { Link, useLocation } from "react-router-dom";
 import { ROUTES } from "@/app/routes/paths";
 import { DASHBOARD_NAV_ITEMS } from "@/features/dashboard/navigation";
 
-export default function DashboardSidebar() {
+interface DashboardSidebarProps {
+  className?: string;
+  onItemClick?: () => void;
+  mobile?: boolean;
+}
+
+export default function DashboardSidebar({
+  className = "",
+  onItemClick,
+  mobile = false,
+}: DashboardSidebarProps) {
   const { pathname } = useLocation();
 
   return (
-    <aside className="w-[287px] h-screen sticky top-0 flex flex-col gap-[98px] items-start bg-white z-[20] shrink-0 border-r border-[#eaecf0]">
-      <div className="flex justify-center items-center w-full pt-6 pb-2">
+    <aside
+      className={`${
+        mobile
+          ? "w-full h-full flex flex-col gap-4 items-start"
+          : "w-[287px] h-screen sticky top-0 flex flex-col gap-[98px] items-start"
+      } bg-white z-[20] shrink-0 border-r border-[#eaecf0] ${className}`}
+    >
+      <div
+        className={`flex justify-center items-center w-full ${
+          mobile ? "pt-4 pb-1" : "pt-6 pb-2"
+        }`}
+      >
         <Link to={ROUTES.root}>
           <div className="w-[61.927px] h-[64px] bg-[url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-02-11/ogLNSxSDnT.png)] bg-contain bg-no-repeat cursor-pointer" />
         </Link>
       </div>
 
-      <nav className="flex flex-col items-start w-full pr-4 flex-1">
+      <nav
+        className={`flex flex-col items-start w-full ${
+          mobile ? "px-2" : "pr-4"
+        } flex-1`}
+      >
         {DASHBOARD_NAV_ITEMS.map((item) => {
           const isActive =
             item.path === ROUTES.dashboard
-              ? pathname === ROUTES.dashboard
+              ? pathname === ROUTES.dashboard ||
+                pathname.startsWith(ROUTES.postPurchaseDashboard)
               : pathname.startsWith(item.path);
 
           return (
             <Link
               key={item.path}
               to={item.path}
-              className={`flex w-[271px] h-[48px] px-10 gap-3 items-center rounded-tr-[36px] rounded-br-[36px] relative cursor-pointer group transition-colors ${
+              onClick={onItemClick}
+              className={`flex ${
+                mobile ? "w-full h-[46px] px-5" : "w-[271px] h-[48px] px-10"
+              } gap-3 items-center rounded-tr-[36px] rounded-br-[36px] relative cursor-pointer group transition-colors ${
                 isActive ? "bg-[#b95af9]" : "hover:bg-gray-50"
               }`}
             >
@@ -50,7 +78,7 @@ export default function DashboardSidebar() {
         })}
       </nav>
 
-      <div className="w-full px-4 pb-10">
+      <div className={`w-full ${mobile ? "px-3 pb-4" : "px-4 pb-10"}`}>
         <div className="bg-[#8e5593] rounded-[20px] p-6 flex flex-col gap-6 relative overflow-hidden">
           <div className="relative z-10 flex flex-col gap-4">
             <h3 className="font-mulish text-xl font-semibold text-white leading-tight">
@@ -61,6 +89,7 @@ export default function DashboardSidebar() {
             </p>
             <Link
               to={ROUTES.profilePlan}
+              onClick={onItemClick}
               className="w-full h-12 rounded-xl bg-white text-[#ac46ff] font-arima font-bold shadow-inner-white hover:bg-white/95 transition-all flex items-center justify-center"
             >
               Next
